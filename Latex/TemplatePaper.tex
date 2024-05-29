@@ -299,7 +299,70 @@ This equation represents the process of finding the next weak learner, denoted a
 The process iterates, adding weak learners one at a time, each one addressing the residuals or errors left by the previous ensemble. This sequential construction continues until a stopping criterion is met, such as reaching a predefined number of trees or when further adding trees no longer improves performance on a validation set.
 
 In summary, gradient boosting regression iteratively improves a predictive model by combining multiple weak learners into a strong predictor, with each new learner focusing on the mistakes of the previous ensemble.
+\subsection{DLinear}
+DLinear, or Decomposition Linear, is a model introduced for time series forecasting.  It first decomposes a raw data input into a trend component by a moving average kernel and a remainder (seasonal) component. Then, two
+one-layer linear layers are applied to each component,
+and we sum up the two features to get the final prediction. By explicitly handling trend, DLinear enhances
+the performance of a vanilla linear when there is a clear
+trend in the data \cite{b15}. 
 
+\begin{figure} [H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{bibliography/Figure/Illu_DLinear.png}
+    \caption{Illustration of the Decomposition Linear Model}
+    \label{fig:DLinear Illustration}
+\end{figure}
+
+The overall structure of DLinear is shown in Figure 11(a). The whole process is:
+
+\subsubsection{Decomposition}
+DLinear decomposes the time series $\mathbf{x} \in \mathbb{R}^{L \times C}$ into trend and seasonal components:
+
+\begin{equation}
+\mathbf{x}(t) = \mathbf{T}(t) + \mathbf{S}(t) + \epsilon(t),
+\end{equation}
+
+where:
+\begin{itemize}
+    \item $\mathbf{T}(t)$ represents the trend component,
+    \item $\mathbf{S}(t)$ represents the seasonal component,
+    \item $\epsilon(t)$ is the residual (noise) component.
+\end{itemize}
+
+\subsubsection{Trend Extraction}
+The trend component $\mathbf{T}(t)$ captures the long-term progression of the time series. It can be extracted using methods such as moving averages or polynomial fitting:
+
+\begin{equation}
+\mathbf{T}(t) = \frac{1}{2k+1} \sum_{i=-k}^{k} \mathbf{x}(t+i),
+\end{equation}
+
+where $k$ is the window size for the moving average.
+
+\subsubsection{Seasonal Component}
+The seasonal component $\mathbf{S}(t)$ captures the repeating patterns within the time series. It can be obtained by removing the trend from the original series:
+\begin{equation}
+\mathbf{S}(t) = \mathbf{x}(t) - \mathbf{T}(t).
+\end{equation}
+
+\subsubsection{Linear Modeling}
+Separate linear models are used to predict the trend and seasonal components:
+\begin{align}
+\hat{\mathbf{T}}(t+h) &= \mathbf{W}_T \mathbf{T}(t) + \mathbf{b}_T \\
+\hat{\mathbf{S}}(t+h) &= \mathbf{W}_S \mathbf{S}(t) + \mathbf{b}_S
+\end{align}
+
+where:
+\begin{itemize}
+    \item $\mathbf{W}_T$ and $\mathbf{W}_S$ are weight matrices for the trend and seasonal components, respectively,
+    \item $\mathbf{b}_T$ and $\mathbf{b}_S$ are bias vectors for the trend and seasonal components, respectively,
+    \item $t+h$ indicates the forecasted value $h$ steps ahead from the current time $t$, as illustrated in Figure 11(b).
+\end{itemize}
+
+The final forecast \( \hat{\mathbf{x}}(t+h) \) is obtained by combining the predictions from the trend and seasonal models:
+\begin{equation}
+\hat{\mathbf{x}}(t+h) = \hat{\mathbf{T}}(t+h) + \hat{\mathbf{S}}(t+h).
+\end{equation}
+DLinear offers an efficient and effective approach to time series forecasting by leveraging decomposition and linear transformations. This model addresses the limitations of traditional Transformers, making it suitable for long-term forecasting tasks.
 \section{Conclusion}
 \subsection{Summary}
 
@@ -320,6 +383,8 @@ In summary, gradient boosting regression iteratively improves a predictive model
 \bibitem{b13}F. A. Gers, J. Schmidhuber, and F. Cummins, ‘‘Learning to forget:
 Continual prediction with LSTM,’’ Neural Comput., vol. 12, no. 10, pp. 2451–2471, Oct. 2000.
 \bibitem{b14}Mahjoub, S., Chrifi-Alaoui, L., Marhic, B., \& Delahoche, L. (2022). Predicting energy consumption using LSTM, multi-layer GRU and drop-GRU neural networks. Sensors, 22(11), 4062.
+\bibitem{b15}Zhou, T., Ma, Z., Zhou, Z., Chen, J., Wang, X., Jiang, Z., \& Jin, X. (2022). 
+‘‘Are Transformers Effective for Time Series Forecasting?’’. arXiv:2205.13504v3 [cs.AI] 17 Aug 2022.
 
 \end{thebibliography}
 %%%%%%%%%%%%%%%
