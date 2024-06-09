@@ -17,7 +17,7 @@
 \title{Using statistical models Machine Learning to predict stock prices of Vietnamese tech companies}
 
 \author{\uppercase{Ninh Thien Bao}\authorrefmark{1},
-\uppercase{Dao Tien Dat\authorrefmark{2}, and Dao Minh Huy}\authorrefmark{3}}
+    \uppercase{Dao Tien Dat\authorrefmark{2}, and Dao Minh Huy}\authorrefmark{3}}
 
 \address[1]{Faculty of Information Systems, University of Information Technology, (e-mail: 21520621@gm.uit.edu.vn)}
 \address[2]{Faculty of Information Systems, University of Information Technology, (e-mail: 21521930@gm.uit.edu.vn)}
@@ -28,11 +28,11 @@
 {Author \headeretal: Ninh Thien Bao, Dao Tien Dat, Dao Minh Huy}
 
 \begin{abstract}
-Predicting stock prices of Vietnamese tech companies presents a unique challenge due to the dynamic and rapidly evolving nature of the technology sector in Vietnam. This study focus on investigating the efficacy of statistical models and machine learning algorithms in forecasting stock prices of prominent tech firms. Leveraging historical stock market data specific to the tech sector in Vietnam, an extensive analysis of various predictive models is conducted, including SARIMAX, Gradient Boosting Regression, Dlinear, Linear Regression, ARIMA, as well as recurrent neural network (RNN) architectures such as Gated Recurrent Unit (GRU) and Long Short-Term Memory (LSTM) networks. The investigation evaluates the performance of each algorithm in terms of prediction accuracy, robustness, and computational efficiency, with a focus on predicting stock prices of key players in the Vietnamese tech industry, including FPT Corporation (FPT), Innovative Technology Development Corporation (ITD) and CMC Corporation (CMG). Additionally. The insights derived from this study contribute to advancing the understanding of effective methodologies for predicting stock prices of Vietnamese tech companies, providing valuable guidance for investors, financial analysts operating in this dynamic sector.
+    Predicting stock prices of Vietnamese tech companies presents a unique challenge due to the dynamic and rapidly evolving nature of the technology sector in Vietnam. This study focus on investigating the efficacy of statistical models and machine learning algorithms in forecasting stock prices of prominent tech firms. Leveraging historical stock market data specific to the tech sector in Vietnam, an extensive analysis of various predictive models is conducted, including SARIMAX, Gradient Boosting Regression, Dlinear, Linear Regression, ARIMA, as well as recurrent neural network (RNN) architectures such as Gated Recurrent Unit (GRU) and Long Short-Term Memory (LSTM) networks. The investigation evaluates the performance of each algorithm in terms of prediction accuracy, robustness, and computational efficiency, with a focus on predicting stock prices of key players in the Vietnamese tech industry, including FPT Corporation (FPT), Innovative Technology Development Corporation (ITD) and CMC Corporation (CMG). Additionally. The insights derived from this study contribute to advancing the understanding of effective methodologies for predicting stock prices of Vietnamese tech companies, providing valuable guidance for investors, financial analysts operating in this dynamic sector.
 \end{abstract}
 
 \begin{keywords}
-predict stock price, linear regression, GRU, LSTM, RNN, ARIMA, SARIMAX,
+    predict stock price, linear regression, GRU, LSTM, RNN, ARIMA, SARIMAX,
 \end{keywords}
 
 \titlepgskip=-15pt
@@ -62,86 +62,86 @@ These studies collectively illustrate the diverse approaches undertaken to tackl
 \subsection{Dataset}
 These three datasets were gathered by using the VnStock program. These datasets are time-series dataset related to historical stock prices of Vietnamese big tech company including FPT Corporation (FPT), Innovative Technology Development Corporation (ITD) and CMC Corporation (CMG) and span from March 1, 2019 to March 1, 2024. All of the datasets include the following attribute:
 \begin{itemize}
-\item Time: This field represents the time at which the stock data was recorded.
-\item Open: This field represents the opening price of the stock at the given time period. The opening price is the price at which the first trade of the day occurred.
-\item High: This field represents the highest price the stock reached during the given time period.
-\item Low: This field represents the lowest price the stock reached during the given time period.
-\item Close: This field represents the closing price of the stock at the given time period. The closing price is the price at which the last trade of the day occurred.
-\item Volume: This field represents the total volume of shares traded during the given time period. Volume typically refers to the number of shares that were traded during a specific period.
-\item Ticker: This field represents the ticker symbol or stock symbol of the company whose stock data is being recorded. Ticker symbols are unique alphabetic identifiers assigned to publicly traded companies.
+    \item Time: This field represents the time at which the stock data was recorded.
+    \item Open: This field represents the opening price of the stock at the given time period. The opening price is the price at which the first trade of the day occurred.
+    \item High: This field represents the highest price the stock reached during the given time period.
+    \item Low: This field represents the lowest price the stock reached during the given time period.
+    \item Close: This field represents the closing price of the stock at the given time period. The closing price is the price at which the last trade of the day occurred.
+    \item Volume: This field represents the total volume of shares traded during the given time period. Volume typically refers to the number of shares that were traded during a specific period.
+    \item Ticker: This field represents the ticker symbol or stock symbol of the company whose stock data is being recorded. Ticker symbols are unique alphabetic identifiers assigned to publicly traded companies.
 \end{itemize}
 
 \subsection{Descriptive Statistics}
 \begin{table}[H]
-  \centering
-  \caption{Descriptive Statistics for FPT, CTR, and CMG}
-  \begin{tabular}{|>{\columncolor{red!20}}c|c|c|c|}
-    \hline
-     \rowcolor{red!20} & FPT & CMG & ITD \\ \hline
-     Count & 1252 & 1252 & 1252 \\ \hline
-     Mean & 53761.78 & 25802.53 & 10146.19 \\ \hline
-     Median & 62070 & 25925 & 10000 \\ \hline
-     Mode & 68400 & 32240 & 7560 \\ \hline
-     Standard Deviation & 24036.80 & 8986.34 & 3069.39 \\ \hline
-     Standard Error & 679.32 & 253.969 & 86.741 \\ \hline
-     Sample Variance & 577767781.9 & 80754464.81 & 9421172.014 \\ \hline
-     Kurtosis & -1.1655988 & -1.5294986 & 0.736944 \\ \hline
-     Skewness & 0.13288096 & 0.13548185 & 0.9204296 \\ \hline
-     Range & 91610 & 33270 & 16110 \\ \hline
-     Minimum & 19190 & 10880 & 5320 \\ \hline
-     25\% & 28170 & 17710 & 7515 \\ \hline
-     75\% & 69670 & 33325 & 11700 \\ \hline
-     Maximum & 110800 & 44150 & 21430 \\ \hline
-     Sum & 67309755 & 32304779 & 12703035 \\ \hline
-  \end{tabular}
+    \centering
+    \caption{Descriptive Statistics for FPT, CTR, and CMG}
+    \begin{tabular}{|>{\columncolor{red!20}}c|c|c|c|}
+        \hline
+        \rowcolor{red!20}  & FPT         & CMG         & ITD         \\ \hline
+        Count              & 1252        & 1252        & 1252        \\ \hline
+        Mean               & 53761.78    & 25802.53    & 10146.19    \\ \hline
+        Median             & 62070       & 25925       & 10000       \\ \hline
+        Mode               & 68400       & 32240       & 7560        \\ \hline
+        Standard Deviation & 24036.80    & 8986.34     & 3069.39     \\ \hline
+        Standard Error     & 679.32      & 253.969     & 86.741      \\ \hline
+        Sample Variance    & 577767781.9 & 80754464.81 & 9421172.014 \\ \hline
+        Kurtosis           & -1.1655988  & -1.5294986  & 0.736944    \\ \hline
+        Skewness           & 0.13288096  & 0.13548185  & 0.9204296   \\ \hline
+        Range              & 91610       & 33270       & 16110       \\ \hline
+        Minimum            & 19190       & 10880       & 5320        \\ \hline
+        25\%               & 28170       & 17710       & 7515        \\ \hline
+        75\%               & 69670       & 33325       & 11700       \\ \hline
+        Maximum            & 110800      & 44150       & 21430       \\ \hline
+        Sum                & 67309755    & 32304779    & 12703035    \\ \hline
+    \end{tabular}
 \end{table}
 \begin{figure}[H]
     \centering
     \begin{minipage}{0.23\textwidth}
-    \centering
-    \includegraphics[width=1\textwidth]{bibliography/Figure/FPT_Quantiles.png}
-    \caption{FPT stock price's boxplot}
-    \label{fig:1}
+        \centering
+        \includegraphics[width=1\textwidth]{bibliography/Figure/FPT_Quantiles.png}
+        \caption{FPT stock price's boxplot}
+        \label{fig:1}
     \end{minipage}
     \hfill
     \begin{minipage}{0.23\textwidth}
-    \centering
-    \includegraphics[width=1\textwidth]{bibliography/Figure/FPT_Bar.png}
-    \caption{FPT stock price's histogram}
-    \label{fig:2}
+        \centering
+        \includegraphics[width=1\textwidth]{bibliography/Figure/FPT_Bar.png}
+        \caption{FPT stock price's histogram}
+        \label{fig:2}
     \end{minipage}
 \end{figure}
 \begin{figure}[H]
     \centering
     \begin{minipage}{0.23\textwidth}
-    \centering
-    \includegraphics[width=1\textwidth]{bibliography/Figure/ITD_Quantiles.png}
-    \caption{ITD stock price's boxplot}
-    \label{fig:1}
+        \centering
+        \includegraphics[width=1\textwidth]{bibliography/Figure/ITD_Quantiles.png}
+        \caption{ITD stock price's boxplot}
+        \label{fig:1}
     \end{minipage}
     \hfill
     \begin{minipage}{0.23\textwidth}
-    \centering
-    \includegraphics[width=1\textwidth]{bibliography/Figure/ITD_Bar.png}
-    \caption{ITD stock price's histogram}
-    \label{fig:2}
+        \centering
+        \includegraphics[width=1\textwidth]{bibliography/Figure/ITD_Bar.png}
+        \caption{ITD stock price's histogram}
+        \label{fig:2}
     \end{minipage}
 \end{figure}
 
 \begin{figure}[H]
     \centering
     \begin{minipage}{0.23\textwidth}
-    \centering
-    \includegraphics[width=1\textwidth]{bibliography/Figure/CMG_Quantiles.png}
-    \caption{CMG stock price's boxplot}
-    \label{fig:1}
+        \centering
+        \includegraphics[width=1\textwidth]{bibliography/Figure/CMG_Quantiles.png}
+        \caption{CMG stock price's boxplot}
+        \label{fig:1}
     \end{minipage}
     \hfill
     \begin{minipage}{0.23\textwidth}
-    \centering
-    \includegraphics[width=1\textwidth]{bibliography/Figure/CMG_Bar.png}
-    \caption{CMG stock price's histogram}
-    \label{fig:2}
+        \centering
+        \includegraphics[width=1\textwidth]{bibliography/Figure/CMG_Bar.png}
+        \caption{CMG stock price's histogram}
+        \label{fig:2}
     \end{minipage}
 \end{figure}
 \section{Methodology}
@@ -150,36 +150,36 @@ Simple Linear Regression estimates the relationship between a scalar response y 
 
 The basic model for multiple linear regression is:
 \begin{equation}
-Y = \beta_0 + \beta_1X_1 + \beta_2X_2 + ... + \beta_mX_m + \mathcal{E}
+    Y = \beta_0 + \beta_1X_1 + \beta_2X_2 + ... + \beta_mX_m + \mathcal{E}
 \end{equation}
 
-Where: $Y$ is dependent variable; $X_1$, … $X_m$ is the distinct independent or predictor variables; $\beta_0$ is the $y$-intercept (value of $y$ when all other parameters are set to 0); $\beta_1$, ... $\beta_m$ is the regression coefficient of the independent variable; $\mathcal{E}$ is model error. 
+Where: $Y$ is dependent variable; $X_1$, … $X_m$ is the distinct independent or predictor variables; $\beta_0$ is the $y$-intercept (value of $y$ when all other parameters are set to 0); $\beta_1$, ... $\beta_m$ is the regression coefficient of the independent variable; $\mathcal{E}$ is model error.
 
 \subsection{ARIMA}
-ARIMA is the abbreviation for “Autoregressive integrated moving average”. The ARIMA model is popularly used to forecast univariate time series data. ARIMA model can handle a time series if it is stationary and has no data missing \cite{b6}. This method is used in multiple studies for forecasting. 
+ARIMA is the abbreviation for “Autoregressive integrated moving average”. The ARIMA model is popularly used to forecast univariate time series data. ARIMA model can handle a time series if it is stationary and has no data missing \cite{b6}. This method is used in multiple studies for forecasting.
 
-ARIMA models are expressed in the form of ARIMA (p,d,q) \cite{b7}. All p, d, and q are non-negative numbers. 
+ARIMA models are expressed in the form of ARIMA (p,d,q) \cite{b7}. All p, d, and q are non-negative numbers.
 
 \begin{enumerate}
     \item$AR$ is Auto Regression, and p is the number of autoregressive terms \cite{b8}. The equation for AR model is:
-    \begin{equation}
-        Y = \mu + \varphi_1Y_{t-1} + \varphi_2Y_{t-2} + ... + \varphi_pY_{t-p} + \varepsilon_t
-    \end{equation}
-which: $Y$ is the current value; $\mu$ is the constant term; $p$ is the number of orders; $\varphi$ is the auto-regression coefficient and $\varepsilon_t$ is the error 
+          \begin{equation}
+              Y = \mu + \varphi_1Y_{t-1} + \varphi_2Y_{t-2} + ... + \varphi_pY_{t-p} + \varepsilon_t
+          \end{equation}
+          which: $Y$ is the current value; $\mu$ is the constant term; $p$ is the number of orders; $\varphi$ is the auto-regression coefficient and $\varepsilon_t$ is the error
     \item MA is the Moving Average, and q is the number of terms in the moving average [5]. The equation for MA model is:
-    \begin{equation}
-        Y = \mu + \theta_1Y_{t-1} + \theta_2Y_{t-2} + ... + \theta_pY_{t-p} + \varepsilon_t
-    \end{equation}
-which: $Y_t$ is the current value; $\mu$ is the constant term; $p$ is the number of orders; $\theta$ is the moving average coefficient and $\varepsilon_t$ is the error 
+          \begin{equation}
+              Y = \mu + \theta_1Y_{t-1} + \theta_2Y_{t-2} + ... + \theta_pY_{t-p} + \varepsilon_t
+          \end{equation}
+          which: $Y_t$ is the current value; $\mu$ is the constant term; $p$ is the number of orders; $\theta$ is the moving average coefficient and $\varepsilon_t$ is the error
     \item Last, the I part is Integrated, and d is the number of differences (order) required to make it a stationary sequence.
 \end{enumerate}
 
 After combining them, we will have the ARIMA(p, d, q) express as follow:
 \begin{equation}
-\begin{aligned}
-\Delta Y_t = \mu + \varphi_1Y_{t-1} + \varphi_2Y_{t-2} + ... +\varphi_pY_{t-p} \\
-+ \theta_1Y_{t-1} + \theta_2Y_{t-2} + ... + \theta_pY_{t-p} + \varepsilon_t
-\end{aligned}
+    \begin{aligned}
+        \Delta Y_t = \mu + \varphi_1Y_{t-1} + \varphi_2Y_{t-2} + ... +\varphi_pY_{t-p} \\
+        + \theta_1Y_{t-1} + \theta_2Y_{t-2} + ... + \theta_pY_{t-p} + \varepsilon_t
+    \end{aligned}
 \end{equation}
 
 \subsection{SARIMAX}
@@ -239,13 +239,13 @@ In Figure 9, $\sigma$ is the sigmoid function shown in equation (13), whose outp
     i_t = \sigma(W_i.[h_{t-1}, X_t] + b_i)
 \end{equation}
 \begin{equation}
-   \hat{C}_t = tanh(W_c.[h_{t-1}, X_t] + b_c)
+    \hat{C}_t = tanh(W_c.[h_{t-1}, X_t] + b_c)
 \end{equation}
 \begin{equation}
-   C_t = f_t*C_{t-1} + i_t + \hat{C}_t
+    C_t = f_t*C_{t-1} + i_t + \hat{C}_t
 \end{equation}
 \begin{equation}
-   O_t = \sigma(W_o.[h_{t-1}, X_t] + b_o)
+    O_t = \sigma(W_o.[h_{t-1}, X_t] + b_o)
 \end{equation}
 \begin{equation}
     sigmoid(x) = \frac{1}{1+e^{-x}}
@@ -304,7 +304,7 @@ DLinear, or Decomposition Linear, is a model introduced for time series forecast
 one-layer linear layers are applied to each component,
 and we sum up the two features to get the final prediction. By explicitly handling trend, DLinear enhances
 the performance of a vanilla linear when there is a clear
-trend in the data \cite{b15}. 
+trend in the data \cite{b15}.
 
 \begin{figure} [H]
     \centering
@@ -319,7 +319,7 @@ The overall structure of DLinear is shown in Figure 11(a). The whole process is:
 DLinear decomposes the time series $\mathbf{x} \in \mathbb{R}^{L \times C}$ into trend and seasonal components:
 
 \begin{equation}
-\mathbf{x}(t) = \mathbf{T}(t) + \mathbf{S}(t) + \epsilon(t),
+    \mathbf{x}(t) = \mathbf{T}(t) + \mathbf{S}(t) + \epsilon(t),
 \end{equation}
 
 where:
@@ -333,7 +333,7 @@ where:
 The trend component $\mathbf{T}(t)$ captures the long-term progression of the time series. It can be extracted using methods such as moving averages or polynomial fitting:
 
 \begin{equation}
-\mathbf{T}(t) = \frac{1}{2k+1} \sum_{i=-k}^{k} \mathbf{x}(t+i),
+    \mathbf{T}(t) = \frac{1}{2k+1} \sum_{i=-k}^{k} \mathbf{x}(t+i),
 \end{equation}
 
 where $k$ is the window size for the moving average.
@@ -341,14 +341,14 @@ where $k$ is the window size for the moving average.
 \subsubsection{Seasonal Component}
 The seasonal component $\mathbf{S}(t)$ captures the repeating patterns within the time series. It can be obtained by removing the trend from the original series:
 \begin{equation}
-\mathbf{S}(t) = \mathbf{x}(t) - \mathbf{T}(t).
+    \mathbf{S}(t) = \mathbf{x}(t) - \mathbf{T}(t).
 \end{equation}
 
 \subsubsection{Linear Modeling}
 Separate linear models are used to predict the trend and seasonal components:
 \begin{align}
-\hat{\mathbf{T}}(t+h) &= \mathbf{W}_T \mathbf{T}(t) + \mathbf{b}_T \\
-\hat{\mathbf{S}}(t+h) &= \mathbf{W}_S \mathbf{S}(t) + \mathbf{b}_S
+    \hat{\mathbf{T}}(t+h) & = \mathbf{W}_T \mathbf{T}(t) + \mathbf{b}_T \\
+    \hat{\mathbf{S}}(t+h) & = \mathbf{W}_S \mathbf{S}(t) + \mathbf{b}_S
 \end{align}
 
 where:
@@ -360,31 +360,693 @@ where:
 
 The final forecast \( \hat{\mathbf{x}}(t+h) \) is obtained by combining the predictions from the trend and seasonal models:
 \begin{equation}
-\hat{\mathbf{x}}(t+h) = \hat{\mathbf{T}}(t+h) + \hat{\mathbf{S}}(t+h).
+    \hat{\mathbf{x}}(t+h) = \hat{\mathbf{T}}(t+h) + \hat{\mathbf{S}}(t+h).
 \end{equation}
 DLinear offers an efficient and effective approach to time series forecasting by leveraging decomposition and linear transformations. This model addresses the limitations of traditional Transformers, making it suitable for long-term forecasting tasks.
+\section{RESULT}
+In this section, we will evaluate eight different models in forecasting: Linear Regression, ARIMA, SARIMAX, LSTM, GRU, DLinear, RNN, and Gradient Boosting Regressor. Initially, we will preprocess the original time series dataset. Following preprocessing, we will divide the data into training, testing, and validation sets using three different ratios: 60:20:20, 70:20:10, and 80:20:10. Each model will be trained on the training set and subsequently used to make predictions on the test and validation sets. The performance of these models will be assessed using the following evaluation metrics: Mean Squared Error (MSE), Mean Absolute Error (MAE), and Root Mean Squared Error (RMSE). The results are presented in the tables below.
+\subsection{CMG}
+\begin{table}[H]
+    \renewcommand{\arraystretch}{1.5}
+    \centering
+    \begin{tabular}{|c|c|p{1cm}|p{1cm}|p{1cm}|}
+        \hline
+        \textbf{Model} & \textbf{Train/Test/Val} & \textbf{RMSE} & \textbf{MAE} & \textbf{MAPE} \\
+        \hline
+        % Linear Regression
+        \multirow{3}{*}{LR}
+                       & 6 - 2 - 2               & 4014.54       & 3113.24      & 9.16\%        \\
+        \cline{2-5}
+                       & 7 - 2 - 1               & 3479.93       & 2922.17      & 9.19\%        \\
+        \cline{2-5}
+                       & 8 - 1 - 1               & 1906.99       & 1597.14      & 4.43\%        \\
+        \hline
+        % ARIMA
+        \multirow{3}{*}{ARIMA}
+                       & 6 - 2 - 2               & 2295.8        & 1886.6       & 5.51\%        \\
+        \cline{2-5}
+                       & 7 - 2 - 1               & 2295.8        & 1886.6       & 5.51\%        \\
+        \cline{2-5}
+                       & 8 - 1 - 1               & 2295.8        & 1886.6       & 5.51\%        \\
+        \hline
+        % SARIMAX
+        \multirow{3}{*}{SARIMAX}
+                       & 6 - 2 - 2               & 1217.97       & 1098.21      & 3.42\%        \\
+        \cline{2-5}
+                       & 7 - 2 - 1               & 649.34        & 507.62       & 1.53\%        \\
+        \cline{2-5}
+                       & 8 - 1 - 1               & 1035.35       & 850.25       & 2.28\%        \\
+        \hline
+        % RNN
+        \multirow{3}{*}{RNN}
+                       & 6 - 2 - 2               & 1323.78       & 1019.18      & 3.13\%        \\
+        \cline{2-5}
+                       & 7 - 2 - 1               & 766.84        & 555.26       & 1.65\%        \\
+        \cline{2-5}
+                       & 8 - 1 - 1               & 773.26        & 569.71       & 1.55\%        \\
+        \hline
+        % GRU
+        \multirow{3}{*}{GRU}
+                       & 6 - 2 - 2               & 1208.25       & 885.54       & 2.71\%        \\
+        \cline{2-5}
+                       & 7 - 2 - 1               & 765.72        & 557.01       & 1.66\%        \\
+        \cline{2-5}
+                       & 8 - 1 - 1               & 1058.28       & 864.53       & 2.32\%        \\
+        \hline
+        % LSTM
+        \multirow{3}{*}{LSTM}
+                       & 6 - 2 - 2               & 1216.88       & 894.34       & 2.74\%        \\
+        \cline{2-5}
+                       & 7 - 2 - 1               & 888.80        & 703.16       & 2.11\%        \\
+        \cline{2-5}
+                       & 8 - 1 - 1               & 760.21        & 557.73       & 1.51\%        \\
+        \hline
+        % GBR
+        \multirow{3}{*}{GBR}
+                       & 6 - 2 - 2               & 1151.03       & 800.82       & 2.41\%        \\
+        \cline{2-5}
+                       & 7 - 2 - 1               & 609.51        & 435.54       & 1.29\%        \\
+        \cline{2-5}
+                       & 8 - 1 - 1               & 622.22        & 446.29       & 1.20\%        \\
+        \hline
+        % DLinear
+        \multirow{3}{*}{DLinear}
+                       & 6 - 2 - 2               & 732.98        & 577.72       & 1.76\%        \\
+        \cline{2-5}
+                       & 7 - 2 - 1               & 731.06        & 575.41       & 1.75\%        \\
+        \cline{2-5}
+                       & 8 - 1 - 1               & 645.57        & 475.18       & 1.46\%        \\
+        \hline
+    \end{tabular}
+    \caption{Performance Metrics on CMG's test set}
+    \label{tab:performance_metrics_cmg}
+\end{table}
+\subsection{FPT}
+\begin{table}[H]
+    \renewcommand{\arraystretch}{1.5}
+    \centering
+    \begin{tabular}{|c|c|p{1cm}|p{1cm}|p{1cm}|}
+        \hline
+        \textbf{Model} & \textbf{Train/Test/Val} & \textbf{RMSE} & \textbf{MAE} & \textbf{MAPE} \\
+        \hline
+        % Linear Regression
+        \multirow{3}{*}{LR}
+                       & 6 - 2 - 2               & 12021.71      & 10138.72     & 15.22\%       \\
+        \cline{2-5}
+                       & 7 - 2 - 1               & 12399.92      & 11311.74     & 16.21\%       \\
+        \cline{2-5}
+                       & 8 - 1 - 1               & 7958.24       & 6875.53      & 8.23\%        \\
+        \hline
+        % ARIMA
+        \multirow{3}{*}{ARIMA}
+                       & 6 - 2 - 2               & 9631          & 6259.7       & 7.3\%         \\
+        \cline{2-5}
+                       & 7 - 2 - 1               & 9631          & 6259.7       & 7.3\%         \\
+        \cline{2-5}
+                       & 8 - 1 - 1               & 9631          & 6259.7       & 7.3\%         \\
+        \hline
+        % SARIMAX
+        \multirow{3}{*}{SARIMAX}
+                       & 6 - 2 - 2               & 1995.53       & 1544.12      & 1.75\%        \\
+        \cline{2-5}
+                       & 7 - 2 - 1               & 1076.95       & 698.12       & 0.91\%        \\
+        \cline{2-5}
+                       & 8 - 1 - 1               & 1995.53       & 1544.12      & 1.75\%        \\
+        \hline
+        % RNN
+        \multirow{3}{*}{RNN}
+                       & 6 - 2 - 2               & 1804.73       & 1284.95      & 1.89\%        \\
+        \cline{2-5}
+                       & 7 - 2 - 1               & 1572.73       & 1106.49      & 1.43\%        \\
+        \cline{2-5}
+                       & 8 - 1 - 1               & 2793.28       & 2309.79      & 2.68\%        \\
+        \hline
+        % GRU
+        \multirow{3}{*}{GRU}
+                       & 6 - 2 - 2               & 1735          & 1184.36      & 1.74\%        \\
+        \cline{2-5}
+                       & 7 - 2 - 1               & 1656.52       & 1142.7       & 1.47\%        \\
+        \cline{2-5}
+                       & 8 - 1 - 1               & 2114.84       & 1555.88      & 1.78\%        \\
+        \hline
+        % LSTM
+        \multirow{3}{*}{LSTM}
+                       & 6 - 2 - 2               & 1944.89       & 1448.76      & 2.11\%        \\
+        \cline{2-5}
+                       & 7 - 2 - 1               & 1739.26       & 1237.97      & 1.58\%        \\
+        \cline{2-5}
+                       & 8 - 1 - 1               & 3425.63       & 2921.82      & 3.36\%        \\
+        \hline
+        % GBR
+        \multirow{3}{*}{GBR}
+                       & 6 - 2 - 2               & 2033.93       & 1433.24      & 2.06\%        \\
+        \cline{2-5}
+                       & 7 - 2 - 1               & 9246.01       & 5228.78      & 5.82\%        \\
+        \cline{2-5}
+                       & 8 - 1 - 1               & 13305.43      & 10220.85     & 11.1\%        \\
+        \hline
+        % DLinear
+        \multirow{3}{*}{DLinear}
+                       & 6 - 2 - 2               & 1430.42       & 1122.67      & 1.49\%        \\
+        \cline{2-5}
+                       & 7 - 2 - 1               & 1336.28       & 1007.43      & 1.33\%        \\
+        \cline{2-5}
+                       & 8 - 1 - 1               & 1216.28       & 891.05       & 1.17\%        \\
+        \hline
+    \end{tabular}
+    \caption{Performance Metrics on FPT's test set}
+    \label{tab:performance_metrics_fpt}
+\end{table}
+\subsection{ITD}
+\begin{table}[H]
+    \renewcommand{\arraystretch}{1.5}
+    \centering
+    \begin{tabular}{|c|c|p{1cm}|p{1cm}|p{1cm}|}
+        \hline
+        \textbf{Model} & \textbf{Train/Test/Val} & \textbf{RMSE} & \textbf{MAE} & \textbf{MAPE} \\
+        \hline
+        % Linear Regression
+        \multirow{3}{*}{LR}
+                       & 6 - 2 - 2               & 5590.21       & 5395.83      & 50.51\%       \\
+        \cline{2-5}
+                       & 7 - 2 - 1               & 3976.87       & 3816.96      & 34.74\%       \\
+        \cline{2-5}
+                       & 8 - 1 - 1               & 3144.64       & 2962.17      & 27.54\%       \\
+        \hline
+        % ARIMA
+        \multirow{3}{*}{ARIMA}
+                       & 6 - 2 - 2               & 1325.59       & 1168.96      & 10.16\%       \\
+        \cline{2-5}
+                       & 7 - 2 - 1               & 1325.59       & 1168.96      & 10.16\%       \\
+        \cline{2-5}
+                       & 8 - 1 - 1               & 1325.59       & 1168.96      & 10.16\%       \\
+        \hline
+        % SARIMAX
+        \multirow{3}{*}{SARIMAX}
+                       & 6 - 2 - 2               & 224.92        & 172.2        & 1.56\%        \\
+        \cline{2-5}
+                       & 7 - 2 - 1               & 197.67        & 161.55       & 1.45\%        \\
+        \cline{2-5}
+                       & 8 - 1 - 1               & 145.77        & 114.32       & 1.03\%        \\
+        \hline
+        % RNN
+        \multirow{3}{*}{RNN}
+                       & 6 - 2 - 2               & 411.11        & 303.07       & 2.77\%        \\
+        \cline{2-5}
+                       & 7 - 2 - 1               & 327.4         & 230.8        & 2.08\%        \\
+        \cline{2-5}
+                       & 8 - 1 - 1               & 289.91        & 212.55       & 1.97\%        \\
+        \hline
+        % GRU
+        \multirow{3}{*}{GRU}
+                       & 6 - 2 - 2               & 436.12        & 326.14       & 3.01\%        \\
+        \cline{2-5}
+                       & 7 - 2 - 1               & 320.45        & 228.5        & 2.06\%        \\
+        \cline{2-5}
+                       & 8 - 1 - 1               & 314.66        & 250.91       & 2.34\%        \\
+        \hline
+        % LSTM
+        \multirow{3}{*}{LSTM}
+                       & 6 - 2 - 2               & 404.67        & 291.17       & 2.67\%        \\
+        \cline{2-5}
+                       & 7 - 2 - 1               & 318.7         & 227.92       & 2.05\%        \\
+        \cline{2-5}
+                       & 8 - 1 - 1               & 284.67        & 219.03       & 2.05\%        \\
+        \hline
+        % GBR
+        \multirow{3}{*}{GBR}
+                       & 6 - 2 - 2               & 442.19        & 346.47       & 3.16\%        \\
+        \cline{2-5}
+                       & 7 - 2 - 1               & 302.22        & 238.29       & 2.13\%        \\
+        \cline{2-5}
+                       & 8 - 1 - 1               & 232.70        & 170.19       & 1.55\%        \\
+        \hline
+        % DLinear
+        \multirow{3}{*}{DLinear}
+                       & 6 - 2 - 2               & 287.85        & 217.10       & 1.96\%        \\
+        \cline{2-5}
+                       & 7 - 2 - 1               & 335.67        & 267.45       & 2.41\%        \\
+        \cline{2-5}
+                       & 8 - 1 - 1               & 273.21        & 201.84       & 1.82\%        \\
+        \hline
+    \end{tabular}
+    \caption{Performance Metrics on ITD's test set}
+    \label{tab:performance_metrics_itd}
+\end{table}
+\subsection{Forecasting Plot}
+\begin{figure} [H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{bibliography/Figure/LinearRegression_CMG_622_90.png}
+    \caption{Linear Regression - CMG - 622}
+    \label{fig:LR_CMG_622_90}
+\end{figure}
+\begin{figure} [H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{bibliography/Figure/LinearRegression_CMG_721_90.png}
+    \caption{Linear Regression - CMG - 721}
+    \label{fig:LR_CMG_721_90}
+\end{figure}
+\begin{figure} [H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{bibliography/Figure/LinearRegression_CMG_811_90.png}
+    \caption{Linear Regression - CMG - 811}
+    \label{fig:LR_CMG_811_90}
+\end{figure}
+\begin{figure} [H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{bibliography/Figure/LinearRegression_FPT_622_90.png}
+    \caption{Linear Regression - FPT - 622}
+    \label{fig:LR_FPT_622_90}
+\end{figure}
+\begin{figure} [H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{bibliography/Figure/LinearRegression_FPT_721_90.png}
+    \caption{Linear Regression - FPT - 721}
+    \label{fig:LR_FPT_721_90}
+\end{figure}
+\begin{figure} [H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{bibliography/Figure/LinearRegression_FPT_811_90.png}
+    \caption{Linear Regression - FPT - 811}
+    \label{fig:LR_FPT_622_90}
+\end{figure}
+\begin{figure} [H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{bibliography/Figure/LinearRegression_ITD_622_90.png}
+    \caption{Linear Regression - ITD - 622}
+    \label{fig:LR_ITD_622_90}
+\end{figure}
+\begin{figure} [H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{bibliography/Figure/LinearRegression_ITD_721_90.png}
+    \caption{Linear Regression - ITD - 721}
+    \label{fig:LR_ITD_721_90}
+\end{figure}
+\begin{figure} [H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{bibliography/Figure/LinearRegression_ITD_811_90.png}
+    \caption{Linear Regression - ITD - 811}
+    \label{fig:LR_ITD_811_90}
+\end{figure}
+\begin{figure} [H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{bibliography/Figure/ARIMA_CMG_622_90.png}
+    \caption{ARIMA - CMG - 622}
+    \label{fig:ARIMA_CMG_622_90}
+\end{figure}
+\begin{figure} [H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{bibliography/Figure/ARIMA_CMG_721_90.png}
+    \caption{ARIMA - CMG - 721}
+    \label{fig:ARIMA_CMG_721_90}
+\end{figure}
+\begin{figure} [H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{bibliography/Figure/ARIMA_CMG_811_90.png}
+    \caption{ARIMA - CMG - 811}
+    \label{fig:ARIMA_CMG_811_90}
+\end{figure}
+\begin{figure} [H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{bibliography/Figure/ARIMA_FPT_622_90.png}
+    \caption{ARIMA - FPT - 622}
+    \label{fig:ARIMA_FPT_622_90}
+\end{figure}
+\begin{figure} [H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{bibliography/Figure/ARIMA_FPT_721_90.png}
+    \caption{ARIMA - FPT - 721}
+    \label{fig:ARIMA_FPT_721_90}
+\end{figure}
+\begin{figure} [H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{bibliography/Figure/ARIMA_FPT_811_90.png}
+    \caption{ARIMA - FPT - 811}
+    \label{fig:ARIMA_FPT_811_90}
+\end{figure}
+\begin{figure} [H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{bibliography/Figure/ARIMA_ITD_622_90.png}
+    \caption{ARIMA - ITD - 622}
+    \label{fig:ARIMA_ITD_622_90}
+\end{figure}
+\begin{figure} [H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{bibliography/Figure/ARIMA_ITD_721_90.png}
+    \caption{ARIMA - ITD - 721}
+    \label{fig:ARIMA_ITD_721_90}
+\end{figure}
+\begin{figure} [H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{bibliography/Figure/ARIMA_ITD_811_90.png}
+    \caption{ARIMA - ITD - 811}
+    \label{fig:ARIMA_ITD_811_90}
+\end{figure}
+\begin{figure} [H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{bibliography/Figure/SARIMAX_CMG_622_90.png}
+    \caption{SARIMAX - CMG - 622}
+    \label{fig:SARIMAX_CMG_622_90}
+\end{figure}
+\begin{figure} [H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{bibliography/Figure/SARIMAX_CMG_721_90.png}
+    \caption{SARIMAX - CMG - 721}
+    \label{fig:SARIMAX_CMG_721_90}
+\end{figure}
+\begin{figure} [H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{bibliography/Figure/SARIMAX_CMG_811_90.png}
+    \caption{SARIMAX - CMG - 811}
+    \label{fig:SARIMAX_CMG_811_90}
+\end{figure}
+\begin{figure} [H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{bibliography/Figure/SARIMAX_FPT_622_90.png}
+    \caption{SARIMAX - FPT - 622}
+    \label{fig:SARIMAX_FPT_622_90}
+\end{figure}
+\begin{figure} [H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{bibliography/Figure/SARIMAX_FPT_721_90.png}
+    \caption{SARIMAX - FPT - 721}
+    \label{fig:SARIMAX_FPT_721_90}
+\end{figure}
+\begin{figure} [H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{bibliography/Figure/SARIMAX_FPT_811_90.png}
+    \caption{SARIMAX - FPT - 811}
+    \label{fig:SARIMAX_FPT_811_90}
+\end{figure}
+\begin{figure} [H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{bibliography/Figure/SARIMAX_ITD_622_90.png}
+    \caption{SARIMAX - ITD - 622}
+    \label{fig:SARIMAX_ITD_622_90}
+\end{figure}
+\begin{figure} [H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{bibliography/Figure/SARIMAX_ITD_721_90.png}
+    \caption{SARIMAX - ITD - 721}
+    \label{fig:SARIMAX_ITD_721_90}
+\end{figure}
+\begin{figure} [H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{bibliography/Figure/SARIMAX_ITD_811_90.png}
+    \caption{SARIMAX - ITD - 811}
+    \label{fig:SARIMAX_ITD_811_90}
+\end{figure}
+\begin{figure} [H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{bibliography/Figure/RNN_CMG_622_90.png}
+    \caption{RNN - CMG - 622}
+    \label{fig:RNN_CMG_622_90}
+\end{figure}
+\begin{figure} [H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{bibliography/Figure/RNN_CMG_721_90.png}
+    \caption{RNN - CMG - 721}
+    \label{fig:RNN_CMG_721_90}
+\end{figure}
+\begin{figure} [H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{bibliography/Figure/RNN_CMG_811_90.png}
+    \caption{RNN - CMG - 811}
+    \label{fig:RNN_CMG_811_90}
+\end{figure}
+\begin{figure} [H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{bibliography/Figure/RNN_FPT_622_90.png}
+    \caption{RNN - FPT - 622}
+    \label{fig:RNN_FPT_622_90}
+\end{figure}
+\begin{figure} [H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{bibliography/Figure/RNN_FPT_721_90.png}
+    \caption{RNN - FPT - 721}
+    \label{fig:RNN_FPT_721_90}
+\end{figure}
+\begin{figure} [H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{bibliography/Figure/RNN_FPT_811_90.png}
+    \caption{RNN - FPT - 811}
+    \label{fig:RNN_FPT_811_90}
+\end{figure}
+\begin{figure} [H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{bibliography/Figure/RNN_ITD_622_90.png}
+    \caption{RNN - ITD - 622}
+    \label{fig:RNN_ITD_622_90}
+\end{figure}
+\begin{figure} [H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{bibliography/Figure/RNN_ITD_721_90.png}
+    \caption{RNN - ITD - 721}
+    \label{fig:RNN_ITD_721_90}
+\end{figure}
+\begin{figure} [H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{bibliography/Figure/RNN_ITD_811_90.png}
+    \caption{RNN - ITD - 811}
+    \label{fig:RNN_ITD_811_90}
+\end{figure}
+\begin{figure} [H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{bibliography/Figure/GRU_CMG_622_90.png}
+    \caption{GRU - CMG - 622}
+    \label{fig:GRU_CMG_622_90}
+\end{figure}
+\begin{figure} [H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{bibliography/Figure/GRU_CMG_721_90.png}
+    \caption{GRU - CMG - 721}
+    \label{fig:GRU_CMG_721_90}
+\end{figure}
+\begin{figure} [H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{bibliography/Figure/GRU_CMG_811_90.png}
+    \caption{GRU - CMG - 811}
+    \label{fig:GRU_CMG_811_90}
+\end{figure}
+\begin{figure} [H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{bibliography/Figure/GRU_FPT_622_90.png}
+    \caption{GRU - FPT - 622}
+    \label{fig:GRU_FPT_622_90}
+\end{figure}
+\begin{figure} [H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{bibliography/Figure/GRU_FPT_721_90.png}
+    \caption{GRU - FPT - 721}
+    \label{fig:GRU_FPT_721_90}
+\end{figure}
+\begin{figure} [H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{bibliography/Figure/GRU_FPT_811_90.png}
+    \caption{GRU - FPT - 811}
+    \label{fig:GRU_FPT_811_90}
+\end{figure}
+\begin{figure} [H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{bibliography/Figure/GRU_ITD_622_90.png}
+    \caption{GRU - ITD - 622}
+    \label{fig:GRU_ITD_622_90}
+\end{figure}
+\begin{figure} [H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{bibliography/Figure/GRU_ITD_721_90.png}
+    \caption{GRU - ITD - 721}
+    \label{fig:GRU_ITD_721_90}
+\end{figure}
+\begin{figure} [H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{bibliography/Figure/GRU_ITD_811_90.png}
+    \caption{GRU - ITD - 811}
+    \label{fig:GRU_ITD_811_90}
+\end{figure}
+\begin{figure} [H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{bibliography/Figure/LSTM_CMG_622_90.png}
+    \caption{LSTM - CMG - 622}
+    \label{fig:LSTM_CMG_622_90}
+\end{figure}
+\begin{figure} [H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{bibliography/Figure/LSTM_CMG_721_90.png}
+    \caption{LSTM - CMG - 721}
+    \label{fig:LSTM_CMG_721_90}
+\end{figure}
+\begin{figure} [H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{bibliography/Figure/LSTM_CMG_811_90.png}
+    \caption{LSTM - CMG - 811}
+    \label{fig:LSTM_CMG_811_90}
+\end{figure}
+\begin{figure} [H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{bibliography/Figure/LSTM_FPT_622_90.png}
+    \caption{LSTM - FPT - 622}
+    \label{fig:LSTM_FPT_622_90}
+\end{figure}
+\begin{figure} [H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{bibliography/Figure/LSTM_FPT_721_90.png}
+    \caption{LSTM - FPT - 721}
+    \label{fig:LSTM_FPT_721_90}
+\end{figure}
+\begin{figure} [H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{bibliography/Figure/LSTM_FPT_811_90.png}
+    \caption{LSTM - FPT - 811}
+    \label{fig:LSTM_FPT_811_90}
+\end{figure}
+\begin{figure} [H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{bibliography/Figure/LSTM_ITD_622_90.png}
+    \caption{LSTM - ITD - 622}
+    \label{fig:LSTM_ITD_622_90}
+\end{figure}
+\begin{figure} [H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{bibliography/Figure/LSTM_ITD_721_90.png}
+    \caption{LSTM - ITD - 721}
+    \label{fig:LSTM_ITD_721_90}
+\end{figure}
+\begin{figure} [H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{bibliography/Figure/LSTM_ITD_811_90.png}
+    \caption{LSTM - ITD - 811}
+    \label{fig:LSTM_ITD_811_90}
+\end{figure}
+\begin{figure} [H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{bibliography/Figure/GBR_CMG_622_90.png}
+    \caption{GBR - CMG - 622}
+    \label{fig:GBR_CMG_622_90}
+\end{figure}
+\begin{figure} [H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{bibliography/Figure/GBR_CMG_721_90.png}
+    \caption{GBR - CMG - 721}
+    \label{fig:GBR_CMG_721_90}
+\end{figure}
+\begin{figure} [H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{bibliography/Figure/GBR_CMG_811_90.png}
+    \caption{GBR - CMG - 811}
+    \label{fig:GBR_CMG_811_90}
+\end{figure}
+\begin{figure} [H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{bibliography/Figure/GBR_FPT_622_90.png}
+    \caption{GBR - FPT - 622}
+    \label{fig:GBR_FPT_622_90}
+\end{figure}
+\begin{figure} [H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{bibliography/Figure/GBR_FPT_721_90.png}
+    \caption{GBR - FPT - 721}
+    \label{fig:GBR_FPT_721_90}
+\end{figure}
+\begin{figure} [H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{bibliography/Figure/GBR_FPT_811_90.png}
+    \caption{GBR - FPT - 811}
+    \label{fig:GBR_FPT_811_90}
+\end{figure}
+\begin{figure} [H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{bibliography/Figure/GBR_ITD_622_90.png}
+    \caption{GBR - ITD - 622}
+    \label{fig:GBR_ITD_622_90}
+\end{figure}
+\begin{figure} [H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{bibliography/Figure/GBR_ITD_721_90.png}
+    \caption{GBR - ITD - 721}
+    \label{fig:GBR_ITD_721_90}
+\end{figure}
+\begin{figure} [H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{bibliography/Figure/GBR_ITD_811_90.png}
+    \caption{GBR - ITD - 811}
+    \label{fig:GBR_ITD_811_90}
+\end{figure}
+\begin{figure} [H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{bibliography/Figure/DLinear_CMG_622_90.png}
+    \caption{DLinear - CMG - 622}
+    \label{fig:DLinear_CMG_622_90}
+\end{figure}
+\begin{figure} [H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{bibliography/Figure/DLinear_CMG_721_90.png}
+    \caption{DLinear - CMG - 721}
+    \label{fig:DLinear_CMG_721_90}
+\end{figure}
+\begin{figure} [H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{bibliography/Figure/DLinear_CMG_811_90.png}
+    \caption{DLinear - CMG - 811}
+    \label{fig:DLinear_CMG_811_90}
+\end{figure}
+\begin{figure} [H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{bibliography/Figure/DLinear_FPT_622_90.png}
+    \caption{DLinear - FPT - 622}
+    \label{fig:DLinear_FPT_622_90}
+\end{figure}
+\begin{figure} [H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{bibliography/Figure/DLinear_FPT_721_90.png}
+    \caption{DLinear - FPT - 721}
+    \label{fig:DLinear_FPT_721_90}
+\end{figure}
+\begin{figure} [H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{bibliography/Figure/DLinear_FPT_811_90.png}
+    \caption{DLinear - FPT - 811}
+    \label{fig:DLinear_FPT_811_90}
+\end{figure}
+\begin{figure} [H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{bibliography/Figure/DLinear_ITD_622_90.png}
+    \caption{DLinear - ITD - 622}
+    \label{fig:DLinear_ITD_622_90}
+\end{figure}
+\begin{figure} [H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{bibliography/Figure/DLinear_ITD_721_90.png}
+    \caption{DLinear - ITD - 721}
+    \label{fig:DLinear_ITD_721_90}
+\end{figure}
+\begin{figure} [H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{bibliography/Figure/DLinear_ITD_811_90.png}
+    \caption{DLinear - ITD - 811}
+    \label{fig:DLinear_ITD_811_90}
+\end{figure}
 \section{Conclusion}
-\subsection{Summary}
 
 %% UNCOMMENT these lines below (and remove the 2 commands above) if you want to embed the bibliografy.
 \begin{thebibliography}{00}
-\bibitem{b1} Pai, P.-F. and Lin, C.H. (2005) ‘A hybrid ARIMA and support vector machines model in stock price forecasting’.
-\bibitem{b2} Vijh, M. et al. (2020) ‘Stock Closing Price Prediction using Machine Learning Techniques’.
-\bibitem{b3}Nelson, D.M., Pereira, A.C.M. and Oliveira, R.A. de (2017) ‘Stock market’s price movement prediction with LSTM neural networks’.
-\bibitem{b4}S. Kumar, A. Gupta, K. Arora, and K. Vatta, “Effect of Rainfall in Predicting Tomato Prices in India: An Application of SARIMAX and NARX Model,” vol. 32, pp. 159–164, Dec. 2022. 
-\bibitem{b5}M. Tranmer, J. Murphy, M. Elliot, and M. Pampaka, “Multiple Linear Regression (2nd Edition)”.
-\bibitem{b6}V. Ş. Ediger and S. Akar, “ARIMA forecasting of primary energy demand by fuel in Turkey,” Energy Policy, vol. 35, no. 3, pp. 1701–1708, Mar. 2007. 
-\bibitem{b7}B. Dey, B. Roy, S. Datta, and T. S. Ustun, “Forecasting ethanol demand in India to meet future blending targets: A comparison of ARIMA and various regression models,” Energy Rep., vol. 9, pp. 411–418, Mar. 2023.
-\bibitem{b8}X. Jin and C. Yi, “The Comparison of Stock Price Prediction Based on Linear Regression Model and Machine Learning Scenarios,” presented at the 2022 International Conference on Bigdata Blockchain and Economy Management (ICBBEM 2022), Atlantis Press, Dec. 2022, pp. 837–842.
-\bibitem{b9}Manigandan P, Alam MS, Alharthi M, Khan U, Alagirisamy K, Pachiyappan D, Rehman A. Forecasting Natural Gas Production and Consumption in United States-Evidence from SARIMA and SARIMAX Models. Energies. 2021; 14(19):6021. 
-\bibitem{b10}D. Kalita, “A Brief Overview of Recurrent Neural Networks (RNN),”Analytics Vidhya, Mar. 11, 2022.
-\bibitem{b11}U. Singh, M. Rizwan, M. Alaraj, and I. Alsaidan, “A Machine Learning-Based Gradient Boosting Regression Approach for Wind Power Production Forecasting: A Step towards Smart Grid Environments,” Aug. 2021.
-‌\bibitem{b12} S. Hochreiter and J. Schmidhuber, ‘‘Long short-time memory,’’ Neural Comput., vol. 9, no. 8, pp. 1735–1780, 1997.
-\bibitem{b13}F. A. Gers, J. Schmidhuber, and F. Cummins, ‘‘Learning to forget:
-Continual prediction with LSTM,’’ Neural Comput., vol. 12, no. 10, pp. 2451–2471, Oct. 2000.
-\bibitem{b14}Mahjoub, S., Chrifi-Alaoui, L., Marhic, B., \& Delahoche, L. (2022). Predicting energy consumption using LSTM, multi-layer GRU and drop-GRU neural networks. Sensors, 22(11), 4062.
-\bibitem{b15}Zhou, T., Ma, Z., Zhou, Z., Chen, J., Wang, X., Jiang, Z., \& Jin, X. (2022). 
-‘‘Are Transformers Effective for Time Series Forecasting?’’. arXiv:2205.13504v3 [cs.AI] 17 Aug 2022.
+    \bibitem{b1} Pai, P.-F. and Lin, C.H. (2005) ‘A hybrid ARIMA and support vector machines model in stock price forecasting’.
+    \bibitem{b2} Vijh, M. et al. (2020) ‘Stock Closing Price Prediction using Machine Learning Techniques’.
+    \bibitem{b3}Nelson, D.M., Pereira, A.C.M. and Oliveira, R.A. de (2017) ‘Stock market’s price movement prediction with LSTM neural networks’.
+    \bibitem{b4}S. Kumar, A. Gupta, K. Arora, and K. Vatta, “Effect of Rainfall in Predicting Tomato Prices in India: An Application of SARIMAX and NARX Model,” vol. 32, pp. 159–164, Dec. 2022.
+    \bibitem{b5}M. Tranmer, J. Murphy, M. Elliot, and M. Pampaka, “Multiple Linear Regression (2nd Edition)”.
+    \bibitem{b6}V. Ş. Ediger and S. Akar, “ARIMA forecasting of primary energy demand by fuel in Turkey,” Energy Policy, vol. 35, no. 3, pp. 1701–1708, Mar. 2007.
+    \bibitem{b7}B. Dey, B. Roy, S. Datta, and T. S. Ustun, “Forecasting ethanol demand in India to meet future blending targets: A comparison of ARIMA and various regression models,” Energy Rep., vol. 9, pp. 411–418, Mar. 2023.
+    \bibitem{b8}X. Jin and C. Yi, “The Comparison of Stock Price Prediction Based on Linear Regression Model and Machine Learning Scenarios,” presented at the 2022 International Conference on Bigdata Blockchain and Economy Management (ICBBEM 2022), Atlantis Press, Dec. 2022, pp. 837–842.
+    \bibitem{b9}Manigandan P, Alam MS, Alharthi M, Khan U, Alagirisamy K, Pachiyappan D, Rehman A. Forecasting Natural Gas Production and Consumption in United States-Evidence from SARIMA and SARIMAX Models. Energies. 2021; 14(19):6021.
+    \bibitem{b10}D. Kalita, “A Brief Overview of Recurrent Neural Networks (RNN),”Analytics Vidhya, Mar. 11, 2022.
+    \bibitem{b11}U. Singh, M. Rizwan, M. Alaraj, and I. Alsaidan, “A Machine Learning-Based Gradient Boosting Regression Approach for Wind Power Production Forecasting: A Step towards Smart Grid Environments,” Aug. 2021.
+    ‌\bibitem{b12} S. Hochreiter and J. Schmidhuber, ‘‘Long short-time memory,’’ Neural Comput., vol. 9, no. 8, pp. 1735–1780, 1997.
+    \bibitem{b13}F. A. Gers, J. Schmidhuber, and F. Cummins, ‘‘Learning to forget:
+    Continual prediction with LSTM,’’ Neural Comput., vol. 12, no. 10, pp. 2451–2471, Oct. 2000.
+    \bibitem{b14}Mahjoub, S., Chrifi-Alaoui, L., Marhic, B., \& Delahoche, L. (2022). Predicting energy consumption using LSTM, multi-layer GRU and drop-GRU neural networks. Sensors, 22(11), 4062.
+    \bibitem{b15}Zhou, T., Ma, Z., Zhou, Z., Chen, J., Wang, X., Jiang, Z., \& Jin, X. (2022).
+    ‘‘Are Transformers Effective for Time Series Forecasting?’’. arXiv:2205.13504v3 [cs.AI] 17 Aug 2022.
 
 \end{thebibliography}
 %%%%%%%%%%%%%%%
