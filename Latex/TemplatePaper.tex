@@ -15,7 +15,7 @@
 
 \begin{document}
 \raggedbottom 
-\title{Using statistical models Machine Learning to predict stock prices of Vietnamese tech companies}
+\title{Levaring Statistical and Machine Learning models to forecast stock prices of Vietnamese tech companies}
 
 \author{\uppercase{Ninh Thien Bao}\authorrefmark{1},
     \uppercase{Dao Tien Dat\authorrefmark{2}, and Dao Minh Huy}\authorrefmark{3}}
@@ -33,7 +33,7 @@
 \end{abstract}
 
 \begin{keywords}
-    predict stock price, linear regression, GRU, LSTM, RNN, ARIMA, SARIMAX,
+    Forecast stock price, Linear regression, GRU, LSTM, RNN, ARIMA, SARIMAX, Gradient Boosting Regressor, Dlinear 
 \end{keywords}
 
 \titlepgskip=-15pt
@@ -79,21 +79,21 @@ These three datasets were gathered by using the VnStock program. These datasets 
     \begin{tabular}{|>{\columncolor{red!20}}c|c|c|c|}
         \hline
         \rowcolor{red!20}  & FPT         & CMG         & ITD         \\ \hline
-        Count              & 1252        & 1252        & 1252        \\ \hline
-        Mean               & 53761.78    & 25802.53    & 10146.19    \\ \hline
-        Median             & 62070       & 25925       & 10000       \\ \hline
-        Mode               & 68400       & 32240       & 7560        \\ \hline
-        Standard Deviation & 24036.80    & 8986.34     & 3069.39     \\ \hline
-        Standard Error     & 679.32      & 253.969     & 86.741      \\ \hline
-        Sample Variance    & 577767781.9 & 80754464.81 & 9421172.014 \\ \hline
-        Kurtosis           & -1.1655988  & -1.5294986  & 0.736944    \\ \hline
-        Skewness           & 0.13288096  & 0.13548185  & 0.9204296   \\ \hline
-        Range              & 91610       & 33270       & 16110       \\ \hline
+        Count              & 1313        & 1313        & 1313        \\ \hline
+        Mean               & 56880.087   & 26832.39    & 10160.89   \\ \hline
+        Median             & 63470       & 28380       & 10040       \\ \hline
+        Mode               & 68400       & 31300       & 7560        \\ \hline
+        Standard Deviation & 27473.98    & 10097.55     & 3002.802     \\ \hline
+        Standard Error     & 758.209     & 278.665     & 82.8694      \\ \hline
+        Sample Variance    & 754819638.968 & 101960621.57 & 9016823.3029 \\ \hline
+        Kurtosis           & -0.39622  & -0.207957  & 0.865044898    \\ \hline
+        Skewness           & 0.46246  & 0.49889  & 0.923718   \\ \hline
+        Range              & 118810      & 52720       & 16110       \\ \hline
         Minimum            & 19190       & 10880       & 5320        \\ \hline
-        25\%               & 28170       & 17710       & 7515        \\ \hline
-        75\%               & 69670       & 33325       & 11700       \\ \hline
-        Maximum            & 110800      & 44150       & 21430       \\ \hline
-        Sum                & 67309755    & 32304779    & 12703035    \\ \hline
+        25\%               & 28410       & 17810       & 7550        \\ \hline
+        75\%               & 71450       & 34350       & 11650       \\ \hline
+        Maximum            & 138000      & 63600       & 21430       \\ \hline
+        Sum                & 74683554    & 35230929    & 13341255    \\ \hline
     \end{tabular}
 \end{table}
 \begin{figure}[H]
