@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.5.25)  11 JUN 2024 14:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.5.28)  12 JUN 2024 16:36
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**c:/Users/cawfe/IS403_O22_HTCL_8/Latex/TemplatePaper.tex
-(c:/Users/cawfe/IS403_O22_HTCL_8/Latex/TemplatePaper.tex
+**d:/VSCode/IS403_O22_HTCL_8/Latex/TemplatePaper.tex
+(d:/VSCode/IS403_O22_HTCL_8/Latex/TemplatePaper.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-04-11>
 (ieeeojies.cls (IEEEtran.cls
@@ -19,7 +19,7 @@ Document Class: IEEEtran 2015/08/26 V1.8b by Michael Shell
 \@IEEEtrantmpcountC=\count191
 \@IEEEtrantmptoksA=\toks17
 LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 503.
-(C:\Users\cawfe\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1ptm.fd
+(C:\Users\datdao2003\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 -- Using 8.5in x 11in (letter) paper.
@@ -103,19 +103,19 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <24> not available
 \IEEEPARstartletwidth=\dimen163
 \c@IEEEbiography=\count269
 \@IEEEtranrubishbin=\box52
-) (C:\Users\cawfe\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifpdf.sty
+) (C:\Users\datdao2003\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifpdf.sty
 Package: ifpdf 2019/10/25 v3.4 ifpdf legacy package. Use iftex instead.
- (C:\Users\cawfe\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
+ (C:\Users\datdao2003\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
 Package: iftex 2022/02/03 v1.0f TeX engine tests
-)) (C:\Users\cawfe\AppData\Local\Programs\MiKTeX\tex/latex/xkeyval\xkeyval.sty
+)) (C:\Users\datdao2003\AppData\Local\Programs\MiKTeX\tex/latex/xkeyval\xkeyval.sty
 Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
- (C:\Users\cawfe\AppData\Local\Programs\MiKTeX\tex/generic/xkeyval\xkeyval.tex (C:\Users\cawfe\AppData\Local\Programs\MiKTeX\tex/generic/xkeyval\xkvutils.tex
+ (C:\Users\datdao2003\AppData\Local\Programs\MiKTeX\tex/generic/xkeyval\xkeyval.tex (C:\Users\datdao2003\AppData\Local\Programs\MiKTeX\tex/generic/xkeyval\xkvutils.tex
 \XKV@toks=\toks18
 \XKV@tempa@toks=\toks19
- (C:\Users\cawfe\AppData\Local\Programs\MiKTeX\tex/generic/xkeyval\keyval.tex))
+ (C:\Users\datdao2003\AppData\Local\Programs\MiKTeX\tex/generic/xkeyval\keyval.tex))
 \XKV@depth=\count270
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
-)){C:/Users/cawfe/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}
+)){C:/Users/datdao2003/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}
 
 pdfTeX warning: pdflatex (file t1-times.map): cannot open font map file
 
@@ -125,15 +125,15 @@ pdfTeX warning: pdflatex (file t1-formata.map): cannot open font map file
 
 pdfTeX warning: pdflatex (file t1-giovannistd.map): cannot open font map file
 \@draftversionrule=\dimen164
-(C:\Users\cawfe\AppData\Local\Programs\MiKTeX\tex/latex/graphics\color.sty
+(C:\Users\datdao2003\AppData\Local\Programs\MiKTeX\tex/latex/graphics\color.sty
 Package: color 2022/01/06 v1.3d Standard LaTeX Color (DPC)
- (C:\Users\cawfe\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
+ (C:\Users\datdao2003\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package color Info: Driver file: pdftex.def on input line 149.
- (C:\Users\cawfe\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
+ (C:\Users\datdao2003\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
 File: pdftex.def 2024/04/13 v1.2c Graphics/color driver for pdftex
-) (C:\Users\cawfe\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.ltx))
+) (C:\Users\datdao2003\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.ltx))
 Package color Info: Redefining color black on input line 134.
 \figbox=\box53
 \titlewidth=\skip51
@@ -146,25 +146,25 @@ Package color Info: Redefining color black on input line 134.
 \@tempcntc=\count272
 \titlepgskip=\skip53
 \maketitlebox=\box56
-) (C:\Users\cawfe\AppData\Local\Programs\MiKTeX\tex/latex/cite\cite.sty
+) (C:\Users\datdao2003\AppData\Local\Programs\MiKTeX\tex/latex/cite\cite.sty
 LaTeX Info: Redefining \cite on input line 302.
 LaTeX Info: Redefining \nocite on input line 332.
 Package: cite 2015/02/27  v 5.5
-) (C:\Users\cawfe\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
+) (C:\Users\datdao2003\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
 Package: amsmath 2023/05/13 v2.17o AMS math features
 \@mathmargin=\skip54
 
 For additional information on amsmath, use the `?' option.
-(C:\Users\cawfe\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amstext.sty
+(C:\Users\datdao2003\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amstext.sty
 Package: amstext 2021/08/26 v2.01 AMS text
- (C:\Users\cawfe\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty
+ (C:\Users\datdao2003\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks20
 \ex@=\dimen167
-)) (C:\Users\cawfe\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.sty
+)) (C:\Users\datdao2003\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 \pmbraise@=\dimen168
-) (C:\Users\cawfe\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
+) (C:\Users\datdao2003\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
 Package: amsopn 2022/04/08 v2.04 operator names
 )
 \inf@bad=\count273
@@ -214,18 +214,18 @@ LaTeX Info: Redefining \Relbar on input line 971.
 \mathdisplay@stack=\toks24
 LaTeX Info: Redefining \[ on input line 2953.
 LaTeX Info: Redefining \] on input line 2954.
-) (C:\Users\cawfe\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amssymb.sty
+) (C:\Users\datdao2003\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
- (C:\Users\cawfe\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amsfonts.sty
+ (C:\Users\datdao2003\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
-)) (C:\Users\cawfe\AppData\Local\Programs\MiKTeX\tex/latex/algorithms\algorithmic.sty
+)) (C:\Users\datdao2003\AppData\Local\Programs\MiKTeX\tex/latex/algorithms\algorithmic.sty
 Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
- (C:\Users\cawfe\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty
+ (C:\Users\datdao2003\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty
 Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
 )
 \c@ALC@unique=\count285
@@ -234,22 +234,22 @@ Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
 \c@ALC@depth=\count288
 \ALC@tlm=\skip57
 \algorithmicindent=\skip58
-) (C:\Users\cawfe\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
+) (C:\Users\datdao2003\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
 Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
- (C:\Users\cawfe\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
+ (C:\Users\datdao2003\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
 Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
- (C:\Users\cawfe\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
+ (C:\Users\datdao2003\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
 Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
-) (C:\Users\cawfe\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.cfg
+) (C:\Users\datdao2003\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 107.
 )
 \Gin@req@height=\dimen176
 \Gin@req@width=\dimen177
-) (C:\Users\cawfe\AppData\Local\Programs\MiKTeX\tex/latex/base\textcomp.sty
+) (C:\Users\datdao2003\AppData\Local\Programs\MiKTeX\tex/latex/base\textcomp.sty
 Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
-) (C:\Users\cawfe\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty
+) (C:\Users\datdao2003\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty
 Package: array 2023/10/16 v2.5g Tabular extension package (FMi)
 \col@sep=\dimen178
 \ar@mcellbox=\box59
@@ -258,14 +258,14 @@ Package: array 2023/10/16 v2.5g Tabular extension package (FMi)
 \extratabsurround=\skip59
 \backup@length=\skip60
 \ar@cellbox=\box60
-) (C:\Users\cawfe\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
+) (C:\Users\datdao2003\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
 Package: xcolor 2023/11/15 v3.01 LaTeX color extensions (UK)
- (C:\Users\cawfe\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
+ (C:\Users\datdao2003\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: pdftex.def on input line 274.
 LaTeX Info: Redefining \color on input line 758.
- (C:\Users\cawfe\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.ltx)
+ (C:\Users\datdao2003\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.ltx)
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1350.
 Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1354.
 Package xcolor Info: Model `RGB' extended on input line 1366.
@@ -275,18 +275,18 @@ Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1370.
 Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1371.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1372.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1373.
-) (C:\Users\cawfe\AppData\Local\Programs\MiKTeX\tex/latex/colortbl\colortbl.sty
-Package: colortbl 2024/02/20 v1.0g Color table columns (DPC)
+) (C:\Users\datdao2003\AppData\Local\Programs\MiKTeX\tex/latex/colortbl\colortbl.sty
+Package: colortbl 2024/05/26 v1.0h Color table columns (DPC)
 \everycr=\toks26
 \minrowclearance=\skip61
 \rownum=\count289
-) (C:\Users\cawfe\AppData\Local\Programs\MiKTeX\tex/latex/multirow\multirow.sty
+) (C:\Users\datdao2003\AppData\Local\Programs\MiKTeX\tex/latex/multirow\multirow.sty
 Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
 \multirow@colwidth=\skip62
 \multirow@cntb=\count290
 \multirow@dima=\skip63
 \bigstrutjot=\dimen180
-) (C:\Users\cawfe\AppData\Local\Programs\MiKTeX\tex/latex/tools\multicol.sty
+) (C:\Users\datdao2003\AppData\Local\Programs\MiKTeX\tex/latex/tools\multicol.sty
 Package: multicol 2023/03/30 v1.9f multicolumn formatting (FMi)
 \c@tracingmulticols=\count291
 \mult@box=\box61
@@ -355,14 +355,14 @@ Package: multicol 2023/03/30 v1.9f multicolumn formatting (FMi)
 \mult@nat@firstbox=\box105
 \colbreak@box=\box106
 \mc@col@check@num=\count300
-) (C:\Users\cawfe\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
+) (C:\Users\datdao2003\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count301
 \float@exts=\toks27
 \float@box=\box107
 \@float@everytoks=\toks28
 \@floatcapt=\box108
-) (C:\Users\cawfe\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
+) (C:\Users\datdao2003\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-04-11 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count302
 \l__pdf_internal_box=\box109
@@ -399,14 +399,14 @@ LaTeX Font Info:    ... okay on input line 16.
 
 -- Lines per column: 56 (exact).
 LaTeX Font Info:    Trying to load font information for T1+ptm on input line 16.
-(C:\Users\cawfe\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\t1ptm.fd
+(C:\Users\datdao2003\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\t1ptm.fd
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 )
 
 LaTeX Font Warning: Font shape `T1/ptm/n/n' undefined
 (Font)              using `T1/ptm/m/n' instead on input line 16.
 
-(C:\Users\cawfe\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
+(C:\Users\datdao2003\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count303
 \scratchdimen=\dimen190
@@ -419,17 +419,17 @@ LaTeX Font Warning: Font shape `T1/ptm/n/n' undefined
 \MPnumerator=\count307
 \makeMPintoPDFobject=\count308
 \everyMPtoPDFconversion=\toks30
-) (C:\Users\cawfe\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
+) (C:\Users\datdao2003\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
- (C:\Users\cawfe\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
+ (C:\Users\datdao2003\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
 
 Package xcolor Warning: Incompatible color definition on input line 31.
 
 LaTeX Font Info:    Trying to load font information for T1+phv on input line 31.
-(C:\Users\cawfe\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\t1phv.fd
+(C:\Users\datdao2003\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\t1phv.fd
 File: t1phv.fd 2020/03/25 scalable font definitions for T1/phv.
 )
 
@@ -444,11 +444,11 @@ Package xcolor Warning: Incompatible color definition on input line 41.
 
 LaTeX Font Info:    Calculating math sizes for size <9.9> on input line 41.
 LaTeX Font Info:    Trying to load font information for U+msa on input line 41.
-(C:\Users\cawfe\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
+(C:\Users\datdao2003\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Trying to load font information for U+msb on input line 41.
- (C:\Users\cawfe\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
+ (C:\Users\datdao2003\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Calculating math sizes for size <6.6> on input line 41.
@@ -486,7 +486,7 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 []
  []
 
-[1{C:/Users/cawfe/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}
+[1{C:/Users/datdao2003/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}
 
 
  <./bibliography/Logo_HTTT.png>]
@@ -510,66 +510,66 @@ Overfull \hbox (11.11783pt too wide) in paragraph at lines 79--98
  [][] 
  []
 
-<bibliography/Figure/FPT_Quantiles.png, id=12, 361.35pt x 217.029pt>
-File: bibliography/Figure/FPT_Quantiles.png Graphic file (type png)
-<use bibliography/Figure/FPT_Quantiles.png>
-Package pdftex.def Info: bibliography/Figure/FPT_Quantiles.png  used on input line 103.
-(pdftex.def)             Requested size: 116.17584pt x 69.77522pt.
+<bibliography/Figure/FPT_Boxplot.png, id=12, 633.0852pt x 381.5856pt>
+File: bibliography/Figure/FPT_Boxplot.png Graphic file (type png)
+<use bibliography/Figure/FPT_Boxplot.png>
+Package pdftex.def Info: bibliography/Figure/FPT_Boxplot.png  used on input line 103.
+(pdftex.def)             Requested size: 116.17584pt x 70.02162pt.
 
 Package xcolor Warning: Incompatible color definition on input line 104.
 
 
 Package xcolor Warning: Incompatible color definition on input line 104.
 
-<bibliography/Figure/FPT_Bar.png, id=13, 361.35pt x 217.029pt>
-File: bibliography/Figure/FPT_Bar.png Graphic file (type png)
-<use bibliography/Figure/FPT_Bar.png>
-Package pdftex.def Info: bibliography/Figure/FPT_Bar.png  used on input line 110.
-(pdftex.def)             Requested size: 116.17584pt x 69.77522pt.
+<bibliography/Figure/FPT_histogram.png, id=13, 616.4631pt x 395.3169pt>
+File: bibliography/Figure/FPT_histogram.png Graphic file (type png)
+<use bibliography/Figure/FPT_histogram.png>
+Package pdftex.def Info: bibliography/Figure/FPT_histogram.png  used on input line 110.
+(pdftex.def)             Requested size: 116.17584pt x 74.49571pt.
 
 Package xcolor Warning: Incompatible color definition on input line 111.
 
 
 Package xcolor Warning: Incompatible color definition on input line 111.
 
-<bibliography/Figure/ITD_Quantiles.png, id=14, 361.569pt x 217.029pt>
-File: bibliography/Figure/ITD_Quantiles.png Graphic file (type png)
-<use bibliography/Figure/ITD_Quantiles.png>
-Package pdftex.def Info: bibliography/Figure/ITD_Quantiles.png  used on input line 119.
-(pdftex.def)             Requested size: 116.17584pt x 69.73218pt.
+<bibliography/Figure/ITD_Boxplot.png, id=14, 627.3036pt x 381.5856pt>
+File: bibliography/Figure/ITD_Boxplot.png Graphic file (type png)
+<use bibliography/Figure/ITD_Boxplot.png>
+Package pdftex.def Info: bibliography/Figure/ITD_Boxplot.png  used on input line 119.
+(pdftex.def)             Requested size: 116.17584pt x 70.66791pt.
 
 Package xcolor Warning: Incompatible color definition on input line 120.
 
 
 Package xcolor Warning: Incompatible color definition on input line 120.
 
-<bibliography/Figure/ITD_Bar.png, id=15, 361.569pt x 217.029pt>
-File: bibliography/Figure/ITD_Bar.png Graphic file (type png)
-<use bibliography/Figure/ITD_Bar.png>
-Package pdftex.def Info: bibliography/Figure/ITD_Bar.png  used on input line 126.
-(pdftex.def)             Requested size: 116.17584pt x 69.73218pt.
+<bibliography/Figure/ITD_histogram.png, id=15, 622.9674pt x 395.3169pt>
+File: bibliography/Figure/ITD_histogram.png Graphic file (type png)
+<use bibliography/Figure/ITD_histogram.png>
+Package pdftex.def Info: bibliography/Figure/ITD_histogram.png  used on input line 126.
+(pdftex.def)             Requested size: 116.17584pt x 73.71758pt.
 
 Package xcolor Warning: Incompatible color definition on input line 127.
 
 
 Package xcolor Warning: Incompatible color definition on input line 127.
 
-<bibliography/Figure/CMG_Quantiles.png, id=16, 361.569pt x 217.029pt>
-File: bibliography/Figure/CMG_Quantiles.png Graphic file (type png)
-<use bibliography/Figure/CMG_Quantiles.png>
-Package pdftex.def Info: bibliography/Figure/CMG_Quantiles.png  used on input line 136.
-(pdftex.def)             Requested size: 116.17584pt x 69.73218pt.
+<bibliography/Figure/CMG_Boxplot.png, id=16, 627.3036pt x 381.5856pt>
+File: bibliography/Figure/CMG_Boxplot.png Graphic file (type png)
+<use bibliography/Figure/CMG_Boxplot.png>
+Package pdftex.def Info: bibliography/Figure/CMG_Boxplot.png  used on input line 136.
+(pdftex.def)             Requested size: 116.17584pt x 70.66791pt.
 
 Package xcolor Warning: Incompatible color definition on input line 137.
 
 
 Package xcolor Warning: Incompatible color definition on input line 137.
 
-<bibliography/Figure/CMG_Bar.png, id=17, 361.569pt x 217.029pt>
-File: bibliography/Figure/CMG_Bar.png Graphic file (type png)
-<use bibliography/Figure/CMG_Bar.png>
-Package pdftex.def Info: bibliography/Figure/CMG_Bar.png  used on input line 143.
-(pdftex.def)             Requested size: 116.17584pt x 69.73218pt.
+<bibliography/Figure/CMG_histogram.png, id=17, 614.295pt x 395.3169pt>
+File: bibliography/Figure/CMG_histogram.png Graphic file (type png)
+<use bibliography/Figure/CMG_histogram.png>
+Package pdftex.def Info: bibliography/Figure/CMG_histogram.png  used on input line 143.
+(pdftex.def)             Requested size: 116.17584pt x 74.76112pt.
 
 Package xcolor Warning: Incompatible color definition on input line 144.
 
@@ -595,7 +595,7 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 []
  []
 
-[2 <./bibliography/Figure/FPT_Quantiles.png> <./bibliography/Figure/FPT_Bar.png> <./bibliography/Figure/ITD_Quantiles.png> <./bibliography/Figure/ITD_Bar.png>]
+[2 <./bibliography/Figure/FPT_Boxplot.png> <./bibliography/Figure/FPT_histogram.png> <./bibliography/Figure/ITD_Boxplot.png> <./bibliography/Figure/ITD_histogram.png>]
 
 Package xcolor Warning: Incompatible color definition on input line 148.
 
@@ -651,7 +651,7 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 []
  []
 
-[3 <./bibliography/Figure/CMG_Quantiles.png> <./bibliography/Figure/CMG_Bar.png>]
+[3 <./bibliography/Figure/CMG_Boxplot.png> <./bibliography/Figure/CMG_histogram.png>]
 <bibliography/Figure/What-is-Recurrent-Neural-Network.jpg, id=39, 1003.75pt x 501.875pt>
 File: bibliography/Figure/What-is-Recurrent-Neural-Network.jpg Graphic file (type jpg)
 <use bibliography/Figure/What-is-Recurrent-Neural-Network.jpg>
@@ -966,12 +966,9 @@ Package xcolor Warning: Incompatible color definition on input line 643.
 
 Package xcolor Warning: Incompatible color definition on input line 646.
 
-
-Package xcolor Warning: Incompatible color definition on input line 649.
-
 File: bibliography/Logo_HTTT.png Graphic file (type png)
 <use bibliography/Logo_HTTT.png>
-Package pdftex.def Info: bibliography/Logo_HTTT.png  used on input line 657.
+Package pdftex.def Info: bibliography/Logo_HTTT.png  used on input line 649.
 (pdftex.def)             Requested size: 24.11993pt x 24.11989pt.
 
 Overfull \hbox (505.12177pt too wide) has occurred while \output is active
@@ -989,8 +986,12 @@ Underfull \hbox (badness 10000) has occurred while \output is active
  []
 
 [8 <./bibliography/Figure/ARIMA_FPT_721_90.png> <./bibliography/Figure/SARIMAX_ITD_721_90.png> <./bibliography/Figure/RNN_CMG_721_90.png> <./bibliography/Figure/GRU_FPT_721_90.png> <./bibliography/Figure/LSTM_ITD_721_90.png> <./bibliography/Figure/GBR_CMG_721_90.png> <./bibliography/Figure/DLinear_FPT_721_90.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 649.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 659--660
-[]\T1/ptm/m/n/7.61 D. Kalita, ^^PA Brief Overview of Re-cur-rent Neu-ral Net-works
+[]\T1/ptm/n/n/7.61 D. Kalita, ^^PA Brief Overview of Re-cur-rent Neu-ral Net-works
  []
 
 File: bibliography/Logo_HTTT.png Graphic file (type png)
@@ -1028,15 +1029,15 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 5459 strings out of 474370
- 90289 string characters out of 5740535
+ 5458 strings out of 474370
+ 90833 string characters out of 5738175
  1985754 words of memory out of 5000000
- 27750 multiletter control sequences out of 15000+600000
+ 27749 multiletter control sequences out of 15000+600000
  644552 words of font info for 158 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,13n,70p,1355b,511s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/cawfe/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/cawfe/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/cawfe/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/cawfe/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/cawfe/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/cawfe/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/cawfe/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/cawfe/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/cawfe/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/cawfe/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/cawfe/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvbo8a.pfb><C:/Users/cawfe/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Users/cawfe/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvro8a.pfb><C:/Users/cawfe/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/cawfe/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/cawfe/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on TemplatePaper.pdf (9 pages, 1143483 bytes).
+ 57i,13n,70p,1350b,372s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/datdao2003/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/datdao2003/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/datdao2003/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/datdao2003/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/datdao2003/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/datdao2003/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/datdao2003/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/datdao2003/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/datdao2003/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/datdao2003/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/datdao2003/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvbo8a.pfb><C:/Users/datdao2003/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Users/datdao2003/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvro8a.pfb><C:/Users/datdao2003/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/datdao2003/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/datdao2003/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
+Output written on TemplatePaper.pdf (9 pages, 1079258 bytes).
 PDF statistics:
  153 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

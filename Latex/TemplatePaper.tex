@@ -100,14 +100,14 @@ These three datasets were gathered by using the VnStock program. These datasets 
     \centering
     \begin{minipage}{0.23\textwidth}
         \centering
-        \includegraphics[width=1\textwidth]{bibliography/Figure/FPT_Quantiles.png}
+        \includegraphics[width=1\textwidth]{bibliography/Figure/FPT_Boxplot.png}
         \caption{FPT stock price's boxplot}
         \label{fig:1}
     \end{minipage}
     \hfill
     \begin{minipage}{0.23\textwidth}
         \centering
-        \includegraphics[width=1\textwidth]{bibliography/Figure/FPT_Bar.png}
+        \includegraphics[width=1\textwidth]{bibliography/Figure/FPT_histogram.png}
         \caption{FPT stock price's histogram}
         \label{fig:2}
     \end{minipage}
@@ -116,14 +116,14 @@ These three datasets were gathered by using the VnStock program. These datasets 
     \centering
     \begin{minipage}{0.23\textwidth}
         \centering
-        \includegraphics[width=1\textwidth]{bibliography/Figure/ITD_Quantiles.png}
+        \includegraphics[width=1\textwidth]{bibliography/Figure/ITD_Boxplot.png}
         \caption{ITD stock price's boxplot}
         \label{fig:1}
     \end{minipage}
     \hfill
     \begin{minipage}{0.23\textwidth}
         \centering
-        \includegraphics[width=1\textwidth]{bibliography/Figure/ITD_Bar.png}
+        \includegraphics[width=1\textwidth]{bibliography/Figure/ITD_histogram.png}
         \caption{ITD stock price's histogram}
         \label{fig:2}
     \end{minipage}
@@ -133,14 +133,14 @@ These three datasets were gathered by using the VnStock program. These datasets 
     \centering
     \begin{minipage}{0.23\textwidth}
         \centering
-        \includegraphics[width=1\textwidth]{bibliography/Figure/CMG_Quantiles.png}
+        \includegraphics[width=1\textwidth]{bibliography/Figure/CMG_Boxplot.png}
         \caption{CMG stock price's boxplot}
         \label{fig:1}
     \end{minipage}
     \hfill
     \begin{minipage}{0.23\textwidth}
         \centering
-        \includegraphics[width=1\textwidth]{bibliography/Figure/CMG_Bar.png}
+        \includegraphics[width=1\textwidth]{bibliography/Figure/CMG_histogram.png}
         \caption{CMG stock price's histogram}
         \label{fig:2}
     \end{minipage}
@@ -644,7 +644,7 @@ In this section, we will evaluate eight different models in forecasting: Linear 
     \label{fig:DLinear_FPT_721_90}
 \end{figure}
 \section{Conclusion}
-
+From the outcome we can see that DLinear have the best overall performance in all three datasets. The results demonstrate that DLinear overall outperforms other models in terms of RMSE, MAE, and MAPE across all three datasets. The DLinear model is particularly effective in capturing the trend and seasonal components of the time series data, leading to more accurate and reliable forecasts. The results also show that the performance of the models varies depending on the dataset and the training/testing/validation split. In general, the LSTM and GRU models perform well across all three datasets, while the ARIMA and SARIMAX models show mixed results. The Gradient Boosting Regressor model also performs well in some cases, but is less consistent across the datasets. From the plot we can see that DLinear perform well on trained dataset but can't doing well at forecasting.
 %% UNCOMMENT these lines below (and remove the 2 commands above) if you want to embed the bibliografy.
 \begin{thebibliography}{00}
     \bibitem{b1} Pai, P.-F. and Lin, C.H. (2005) ‘A hybrid ARIMA and support vector machines model in stock price forecasting’.
