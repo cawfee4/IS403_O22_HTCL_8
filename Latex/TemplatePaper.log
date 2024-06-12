@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.5.28)  11 JUN 2024 15:46
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.5.28)  12 JUN 2024 16:36
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -966,12 +966,9 @@ Package xcolor Warning: Incompatible color definition on input line 643.
 
 Package xcolor Warning: Incompatible color definition on input line 646.
 
-
-Package xcolor Warning: Incompatible color definition on input line 649.
-
 File: bibliography/Logo_HTTT.png Graphic file (type png)
 <use bibliography/Logo_HTTT.png>
-Package pdftex.def Info: bibliography/Logo_HTTT.png  used on input line 657.
+Package pdftex.def Info: bibliography/Logo_HTTT.png  used on input line 649.
 (pdftex.def)             Requested size: 24.11993pt x 24.11989pt.
 
 Overfull \hbox (505.12177pt too wide) has occurred while \output is active
@@ -989,8 +986,12 @@ Underfull \hbox (badness 10000) has occurred while \output is active
  []
 
 [8 <./bibliography/Figure/ARIMA_FPT_721_90.png> <./bibliography/Figure/SARIMAX_ITD_721_90.png> <./bibliography/Figure/RNN_CMG_721_90.png> <./bibliography/Figure/GRU_FPT_721_90.png> <./bibliography/Figure/LSTM_ITD_721_90.png> <./bibliography/Figure/GBR_CMG_721_90.png> <./bibliography/Figure/DLinear_FPT_721_90.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 649.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 659--660
-[]\T1/ptm/m/n/7.61 D. Kalita, ^^PA Brief Overview of Re-cur-rent Neu-ral Net-works
+[]\T1/ptm/n/n/7.61 D. Kalita, ^^PA Brief Overview of Re-cur-rent Neu-ral Net-works
  []
 
 File: bibliography/Logo_HTTT.png Graphic file (type png)
@@ -1028,15 +1029,15 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 5459 strings out of 474370
- 90848 string characters out of 5738175
+ 5458 strings out of 474370
+ 90833 string characters out of 5738175
  1985754 words of memory out of 5000000
- 27750 multiletter control sequences out of 15000+600000
+ 27749 multiletter control sequences out of 15000+600000
  644552 words of font info for 158 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,13n,70p,1350b,511s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 57i,13n,70p,1350b,372s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/datdao2003/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/datdao2003/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/datdao2003/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/datdao2003/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/datdao2003/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/datdao2003/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/datdao2003/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/datdao2003/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/datdao2003/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/datdao2003/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/datdao2003/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvbo8a.pfb><C:/Users/datdao2003/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Users/datdao2003/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvro8a.pfb><C:/Users/datdao2003/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/datdao2003/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/datdao2003/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on TemplatePaper.pdf (9 pages, 1078571 bytes).
+Output written on TemplatePaper.pdf (9 pages, 1079258 bytes).
 PDF statistics:
  153 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
