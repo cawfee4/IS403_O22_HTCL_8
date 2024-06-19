@@ -15,7 +15,7 @@
 
 \begin{document}
 \raggedbottom 
-\title{Levaring Statistical and Machine Learning models to forecast stock prices of Vietnamese tech companies}
+\title{Leveraging Statistical and Machine Learning models to forecast stock prices of Vietnamese tech companies}
 
 \author{\uppercase{Ninh Thien Bao}\authorrefmark{1},
     \uppercase{Dao Tien Dat\authorrefmark{2}, and Dao Minh Huy}\authorrefmark{3}}
@@ -29,7 +29,7 @@
 {Author \headeretal: Ninh Thien Bao, Dao Tien Dat, Dao Minh Huy}
 
 \begin{abstract}
-    Predicting stock prices of Vietnamese tech companies presents a unique challenge due to the dynamic and rapidly evolving nature of the technology sector in Vietnam. This study focus on investigating the efficacy of statistical models and machine learning algorithms in forecasting stock prices of prominent tech firms. Leveraging historical stock market data specific to the tech sector in Vietnam, an extensive analysis of various predictive models is conducted, including SARIMAX, Gradient Boosting Regression, Dlinear, Linear Regression, ARIMA, as well as recurrent neural network (RNN) architectures such as Gated Recurrent Unit (GRU) and Long Short-Term Memory (LSTM) networks. The investigation evaluates the performance of each algorithm in terms of prediction accuracy, robustness, and computational efficiency, with a focus on predicting stock prices of key players in the Vietnamese tech industry, including FPT Corporation (FPT), Innovative Technology Development Corporation (ITD) and CMC Corporation (CMG). Additionally. The insights derived from this study contribute to advancing the understanding of effective methodologies for predicting stock prices of Vietnamese tech companies, providing valuable guidance for investors, financial analysts operating in this dynamic sector.
+    Predicting stock prices of Vietnamese tech companies presents a unique challenge due to the dynamic and rapidly evolving nature of the technology sector in Vietnam. This study focuses on investigating the efficacy of statistical models and machine learning algorithms in forecasting stock prices of prominent tech firms. Leveraging historical stock market data specific to the tech sector in Vietnam, an extensive analysis of various predictive models is conducted, including SARIMAX, Gradient Boosting Regression, Dlinear, Linear Regression, ARIMA, as well as recurrent neural network (RNN) architectures such as Gated Recurrent Unit (GRU) and Long Short-Term Memory (LSTM) networks. The investigation evaluates the performance of each algorithm in terms of prediction accuracy, robustness, and computational efficiency, with a focus on predicting stock prices of key players in the Vietnamese tech industry, including FPT Corporation (FPT), Innovative Technology Development Corporation (ITD) and CMC Corporation (CMG). Additionally, the insights derived from this study contribute to advancing the understanding of effective methodologies for predicting stock prices of Vietnamese tech companies, providing valuable guidance for investors, financial analysts operating in this dynamic sector.
 \end{abstract}
 
 \begin{keywords}
@@ -42,7 +42,7 @@
 
 \section{Introduction}
 \label{sec:introduction}
-The stock market plays a pivotal role in the global economy, serving as a platform for companies to raise capital and for investors to allocate funds with the expectation of returns. In Vietnam, as in many emerging economies, the stock market is characterized by unique dynamics influenced by factors such as economic development, regulatory environment, and investor sentiment. Accurately predicting stock prices in such markets is essential for investors, financial analysts, and policymakers alike, as it enables informed decision-making, risk-management, and the efficient allocation of resources.
+The stock market plays a pivotal role in the global economy, serving as a platform for companies to raise capital and for investors to allocate funds with the expectation of returns. In Vietnam, as in many emerging economies, the stock market is characterized by unique dynamics influenced by factors such as economic development, regulatory environment, and investor sentiment. Accurately predicting stock prices in such markets is essential for investors, financial analysts, and policymakers alike as it enables informed decision-making, risk management, and the efficient allocation of resources.
 
 However, forecasting stock prices is a highly challenging task due to the complexity and volatility of financial markets. Traditional methods of analysis, such as fundamental analysis and technical analysis, often fall short in capturing the complex patterns and nonlinear relationships present in stock price movements. In the last few years, there has been a growing interest in the application of statistical models and machine learning techniques to address this challenge, driven by advances in computational power, data availability, and algorithmic sophistication.
 
@@ -56,7 +56,7 @@ The prediction of stock prices through the use of a combination of statistical m
 
 Vijh et al. (2020) \cite{b2} explored the use of Artificial Neural Networks (ANNs) and Random Forest techniques to predict the closing prices of stocks. By utilizing financial data such as Open, High, Low, and Close prices, their models exhibited efficiency in forecasting the next day's closing price for various companies across different sectors. Evaluation metrics including Root Mean Square Error (RMSE) and Mean Absolute Percentage Error (MAPE) indicated the effectiveness of their predictive models.
 
-Nelson, Pereira, and Oliveira (2017) \cite{b3} delved into the application of Long Short-Term Memory (LSTM) neural networks for predicting stock price movements. Their study focused on capturing the complex and dynamic nature of stock market environments by incorporating historical price data and technical analysis indicators. Through a series of experiments, they achieved promising results, with their LSTM-based model demonstrating an average accuracy of 55.9% in predicting future trends of stock prices.
+Nelson, Pereira, and Oliveira (2017) \cite{b3} delved into the application of Long Short-Term Memory (LSTM) neural networks for predicting stock price movements. Their study focused on capturing the complex and dynamic nature of stock market environments by incorporating historical price data and technical analysis indicators. Through a series of experiments, they achieved promising results, with their LSTM-based model demonstrating an average accuracy of 55.9\% in predicting future trends of stock prices.
 
 These studies collectively illustrate the diverse approaches undertaken to tackle the challenge of stock price prediction, ranging from hybrid statistical and machine learning models to advanced neural network architectures.
 \section{Materials}
@@ -154,7 +154,15 @@ The basic model for multiple linear regression is:
     Y = \beta_0 + \beta_1X_1 + \beta_2X_2 + ... + \beta_mX_m + \mathcal{E}
 \end{equation}
 
-Where: $Y$ is dependent variable; $X_1$, … $X_m$ is the distinct independent or predictor variables; $\beta_0$ is the $y$-intercept (value of $y$ when all other parameters are set to 0); $\beta_1$, ... $\beta_m$ is the regression coefficient of the independent variable; $\mathcal{E}$ is model error.
+Where: 
+\begin{itemize}
+    \item $Y$ is dependent variable;
+    \item $X_1$, … $X_m$ is the distinct independent or predictor variables;
+    \item $\beta_0$ is the $y$-intercept (value of $y$ when all other parameters are set to 0);
+    \item $\beta_1$, ... $\beta_m$ is the regression coefficient of the independent variable;
+    \item $\mathcal{E}$ is model error.
+\end{itemize}
+       
 
 \subsection{ARIMA}
 ARIMA is the abbreviation for “Autoregressive integrated moving average”. The ARIMA model is popularly used to forecast univariate time series data. ARIMA model can handle a time series if it is stationary and has no data missing \cite{b6}. This method is used in multiple studies for forecasting.
@@ -188,11 +196,15 @@ Seasonal ARIMAX is an advancement of the seasonal ARIMA with external feature va
 \begin{equation}
     \Phi_P(B^S)\phi_p(B)\bigtriangledown_S^D\bigtriangledown^d = \theta_q(B)\Theta_Q(B^S)\varepsilon_t
 \end{equation}
-where $\Phi_P(B^S) = (1 - \Phi_1B^S - ... - \Phi_pB^{sP})$ is the seasonal AR operator of order P;\\
-$\phi_p(B) = (1 - \phi_1B - ... - \phi_pB^p)$ is the regular AR operator of order p; $\bigtriangledown_S^D = (1 - B)^d$ represents the seasonal differences and $\bigtriangledown_S^D = (1 - B^S)^D$ the regular differences;\\
-$\Theta_Q(B^S) = (1 - \Theta_1B^S - ... - \Theta_QB^{sQ})$ is the seasonal moving average operator of order Q; \\
-$\theta_q(B) = (1 - \theta_1B - ... - \theta_qB^q) $ is the regular moving average operator of order q;\\
-$\varepsilon_t$ is a white noise process.
+where: 
+\begin{itemize}
+    \item $\Phi_P(B^S) = (1 - \Phi_1B^S - ... - \Phi_pB^{sP})$ is the seasonal AR operator of order P
+    \item $\phi_p(B) = (1 - \phi_1B - ... - \phi_pB^p)$ is the regular AR operator of order p;
+    \item $\bigtriangledown_S^D = (1 - B)^d$ represents the seasonal differences and $\bigtriangledown_S^D = (1 - B^S)^D$ the regular differences;
+    \item $\Theta_Q(B^S) = (1 - \Theta_1B^S - ... - \Theta_QB^{sQ})$ is the seasonal moving average operator of order Q;
+    \item $\theta_q(B) = (1 - \theta_1B - ... - \theta_qB^q) $ is the regular moving average operator of order q;
+    \item $\varepsilon_t$ is a white noise process.
+\end{itemize}
 
 SARIMAX model demonstrates the use of exogenous variables by using the concept of “regression with SARIMA errors”. The model can be written as:
 \begin{equation}
@@ -205,12 +217,12 @@ This equation is just a linear regression to depict the linear effect of exogeno
 \end{equation}
 
 where all the notations and operators have same meaning as above \cite{b4}.
-\subsection{Recurrent Natural Network}
-Recurrent Natural Networks is a type of neural network that can be used to model sequence data. RNNs, which are formed from feedforward networks, are similar to human brains in their behaviour. Simply said, recurrent neural networks can anticipate sequential data in a way that other algorithms can’t \cite{b10}. RNN processes sequence data by connecting previous outputs to current calculations, unlike traditional neural networks. It memorizes past information, incorporating it into current outputs, allowing for processing sequences of any length.
+\subsection{Recurrent Neural Network}
+Recurrent Neural Networks is a type of neural network that can be used to model sequence data. RNNs, which are formed from feedforward networks, are similar to human brains in their behaviour. Simply said, recurrent neural networks can anticipate sequential data in a way that other algorithms can’t \cite{b10}. RNN processes sequence data by connecting previous outputs to current calculations, unlike traditional neural networks. It memorizes past information, incorporating it into current outputs, allowing for processing sequences of any length.
 \begin{figure} [H]
     \centering
     \includegraphics[width=0.5\textwidth]{bibliography/Figure/RNN_overview.png}
-    \caption{Overview the Recurrent Natural Network}
+    \caption{Overview the Recurrent Neural Network}
     \label{fig:rnn-overview}
 \end{figure}
 
@@ -644,7 +656,7 @@ In this section, we will evaluate eight different models in forecasting: Linear 
     \label{fig:DLinear_FPT_721_90}
 \end{figure}
 \section{Conclusion}
-From the outcome we can see that DLinear have the best overall performance in all three datasets. The results demonstrate that DLinear overall outperforms other models in terms of RMSE, MAE, and MAPE across all three datasets. The DLinear model is particularly effective in capturing the trend and seasonal components of the time series data, leading to more accurate and reliable forecasts. The results also show that the performance of the models varies depending on the dataset and the training/testing/validation split. In general, the LSTM and GRU models perform well across all three datasets, while the ARIMA and SARIMAX models show mixed results. The Gradient Boosting Regressor model also performs well in some cases, but is less consistent across the datasets. From the plot we can see that DLinear perform well on trained dataset but can't doing well at forecasting.
+From the outcomes, we can see that DLinear have the best overall performance in all three datasets. The results demonstrate that DLinear overall outperforms other models in terms of RMSE, MAE, and MAPE across all three datasets. The DLinear model is particularly effective in capturing the trend and seasonal components of the time series data, leading to more accurate and reliable forecasts. The results also show that the performance of the models varies depending on the dataset and the training/testing/validation split. In general, the LSTM and GRU models perform well across all three datasets, while the ARIMA and SARIMAX models show mixed results. The Gradient Boosting Regressor model also performs well in some cases, but is less consistent across the datasets. From the plot, we can see that DLinear perform well on trained dataset but not perform well in forecasting.
 %% UNCOMMENT these lines below (and remove the 2 commands above) if you want to embed the bibliografy.
 \begin{thebibliography}{00}
     \bibitem{b1} Pai, P.-F. and Lin, C.H. (2005) ‘A hybrid ARIMA and support vector machines model in stock price forecasting’.
