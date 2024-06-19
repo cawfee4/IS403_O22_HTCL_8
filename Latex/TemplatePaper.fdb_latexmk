@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1718184998.7637 "d:/VSCode/IS403_O22_HTCL_8/Latex/TemplatePaper.tex" "TemplatePaper.pdf" "TemplatePaper" 1718185001.43607 0
+["pdflatex"] 1718770113.8159 "d:/VSCode/IS403_O22_HTCL_8/Latex/TemplatePaper.tex" "TemplatePaper.pdf" "TemplatePaper" 1718770116.61088 0
   "C:/Users/datdao2003/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1717991655 82507 a9eef8696c92627b87e9975edea03b2a ""
   "C:/Users/datdao2003/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1716867386 24242714 42ff9b5ec1dc945bbddf178c9a05fc1b ""
   "C:/Users/datdao2003/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc" 1458473887 4993 80dc9bab7f31fb78a000ccfed0e27cab ""
@@ -106,8 +106,8 @@
   "C:/Users/datdao2003/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1700127522 55487 80a65caedd3722f4c20a14a69e785d8f ""
   "C:/Users/datdao2003/AppData/Local/Programs/MiKTeX/tex/latex/xkeyval/xkeyval.sty" 1656236919 4937 4ce600ce9bd4ec84d0250eb6892fcf4f ""
   "IEEEtran.cls" 1716779937 288304 5b2e4fa15b0f7eabb840ebf67df4c0f7 ""
-  "TemplatePaper.aux" 1718185001 7286 3db8428bb84011c9d3d3875830187da8 "pdflatex"
-  "TemplatePaper.tex" 1718184998 45028 6539555204d107c5e90bfd2f6699e3e1 ""
+  "TemplatePaper.aux" 1718770116 7284 5c4473a6ad8115f55e3d401d397e9954 "pdflatex"
+  "TemplatePaper.tex" 1718770109 45215 0689ab4fd340a339bcc8a1de17477c1c ""
   "bibliography/Figure/ARIMA_FPT_721_90.png" 1717983423 58553 f3b4faf3437b56d931b06d7823071c8a ""
   "bibliography/Figure/CMG_Boxplot.png" 1718095277 19640 af5bfd285400c60a5c051b6e6c3133ce ""
   "bibliography/Figure/CMG_histogram.png" 1718095346 19843 326759315eb77a57ecbfa8d988b167f3 ""
@@ -128,7 +128,7 @@
   "bibliography/Figure/SARIMAX_ITD_721_90.png" 1717983423 64456 e5be237bee14505ca0689292ef4d7670 ""
   "bibliography/Figure/What-is-Recurrent-Neural-Network.jpg" 1716779937 20700 9f26710c2e971f5e302163bf50f0c88e ""
   "bibliography/Logo_HTTT.png" 1716779937 201761 a75644caf3356abb594a9638af377093 ""
-  "d:/VSCode/IS403_O22_HTCL_8/Latex/TemplatePaper.tex" 1718184998 45028 6539555204d107c5e90bfd2f6699e3e1 ""
+  "d:/VSCode/IS403_O22_HTCL_8/Latex/TemplatePaper.tex" 1718770109 45215 0689ab4fd340a339bcc8a1de17477c1c ""
   "ieeeojies.cls" 1716779937 44948 b3f6f333a7370cfc79757c7102125425 ""
   (generated)
   "TemplatePaper.aux"
