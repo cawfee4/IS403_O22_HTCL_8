@@ -306,25 +306,68 @@ where:
     \item $t$ is the candidate activation.
 \end{itemize}
 \subsection{Gradient Boosting Regressor}
-A gradient boosting regressor model involves an ensemble learning approach where robust forecasting models are formed by integrating several individual regression trees (decision trees) that are referred to as weak learners. Such an algorithm reduces the error rate of weakly learned models (regressors or classifiers). Weakly learned models are those which have a high bias regarding the training dataset, with low variance and regularization, and whose outputs are considered only somewhat improved when compared with arbitrary guesses \cite{b11}. Generally, boosting algorithms contains three components, namely, an additive model, weak learners, and a loss function.
 
-GBM (gradient boosting machines) operate by identifying the limitations of weak models via gradients. This is attained with the help of an iterative approach, where the task is to finally join base learners to decrease forecast errors, where decision trees are combined by means of an additive model while reducing the loss function via gradient descent. The GBT (gradient boosting tree) \( F_n(x_t) \) can be defined as the summation of n regression-trees.
+Gradient Boosting Regressor (GBR) is a powerful ensemble learning technique that constructs predictive models in a stage-wise fashion by combining multiple weak learners, typically decision trees, to enhance predictive accuracy. In time-series forecasting, GBR proves effective when employed with the sliding window method to capture temporal dependencies and patterns.
 
+\subsubsection{Initial Model}
+
+GBR commences with an initial constant model:
 \begin{equation}
-    F_n(x_t) = \sum_{i=1}^{n} f_i(x_t)
+    \hat{F}_0(x) = \arg\min_{c} \sum_{i=1}^{N} L(y_i, c),
 \end{equation}
+where:
+\begin{itemize}
+    \item \(\hat{F}_0(x)\) represents the initial prediction model,
+    \item \(L(y_i, c)\) denotes the loss function,
+    \item \(y_i\) signifies the actual values, and
+    \item \(c\) stands for a constant.
+\end{itemize}
 
-where every \(F_i(x_t)\) is a decision tree (regression-tree). The ensemble of trees is constructed
-sequentially by estimating the new decision tree fn+1(xt) with the help of the following
-equation:
+\subsubsection{Pseudo-Residuals}
+
+At each stage \(m\), the model computes pseudo-residuals to identify the errors of the current model:
 \begin{equation}
-    \arg\min_{\{t\}} \sum_{t} L\left(y_t, F_n(x_t) + f_{n+1}(x_t)\right)
+    r_{im} = -\left[\frac{\partial L(y_i, \hat{F}(x_i))}{\partial \hat{F}(x_i)}\right]_{\hat{F}(x) = \hat{F}_{m-1}(x)},
 \end{equation}
-This equation represents the process of finding the next weak learner, denoted as $f_{n+1}(x_t)$, that minimizes the loss function $L$ when added to the current ensemble predictor $F_n(x_t)$, given the training data $(x_t, y_t)$. Here, $L$ measures the discrepancy between the true target values $y_t$ and the predictions made by the current ensemble.
+where:
+\begin{itemize}
+    \item \(r_{im}\) refers to the pseudo-residuals,
+    \item \(L\) stands for the loss function, and
+    \item \(\hat{F}(x_i)\) represents the current model prediction.
+\end{itemize}
 
-The process iterates, adding weak learners one at a time, each one addressing the residuals or errors left by the previous ensemble. This sequential construction continues until a stopping criterion is met, such as reaching a predefined number of trees or when further adding trees no longer improves performance on a validation set.
+\subsubsection{Model Update}
 
-In summary, gradient boosting regression iteratively improves a predictive model by combining multiple weak learners into a strong predictor, with each new learner focusing on the mistakes of the previous ensemble.
+A new decision tree \(h_m(x)\) is fitted to the pseudo-residuals, and the model is updated:
+\begin{equation}
+    \hat{F}_m(x) = \hat{F}_{m-1}(x) + \nu h_m(x),
+\end{equation}
+where:
+\begin{itemize}
+    \item \(\hat{F}_m(x)\) denotes the updated model,
+    \item \(\nu\) represents the learning rate, and
+    \item \(h_m(x)\) stands for the new tree.
+\end{itemize}
+
+\subsubsection{Application in Time-Series Forecasting with Sliding Window}
+
+To apply Gradient Boosting Regressor (GBR) to time-series forecasting using the sliding window method, we begin by partitioning the time-series data into overlapping windows of a fixed length. Each window serves as an input feature set, with the subsequent value serving as the target variable. For example, for a window size \(n\), the input feature set \(X_t\) at time \(t\) consists of the previous \(n\) observations:
+\begin{equation}
+    X_t = [x_{t-1}, x_{t-2}, \ldots, x_{t-n}],
+\end{equation}
+where \(X_t\) represents the input feature set at time \(t\).
+
+The GBR model is then trained on these windowed feature sets. During training, the model iteratively corrects errors from previous predictions, effectively capturing the temporal dependencies present in the data.
+
+For forecasting, the trained GBR model utilizes the most recent window \(X_t\) to predict future values. Specifically, it predicts \(\hat{y}_{t+h}\), where \(t+h\) indicates the forecasted value \(h\) steps ahead from the current time \(t\), using the formula:
+\begin{equation}
+    \hat{y}_{t+h} = \hat{F}(X_t),
+\end{equation}
+where \(\hat{F}\) represents the trained GBR model.
+
+As new data becomes available, the window slides forward, incorporating the new observation and dropping the oldest one. This iterative process allows the model to adapt to changing patterns in the time-series data and make accurate forecasts.
+
+
 \subsection{Decomposition Linear}
 Decomposition Linear or DLinear, is a model introduced for time series forecasting.  It first decomposes a raw data input into a trend component by a moving average kernel and a remainder (seasonal) component. Then, two
 one-layer linear layers are applied to each component,
