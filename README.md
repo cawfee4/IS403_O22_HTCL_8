@@ -24,17 +24,16 @@ The models used in this project:
 - Linear Regression
 - ARIMA
 - SARIMAX
-- LSTM
 - Gradient Boosting Regressor
 - Long Short-Term Memory (LSTM)
 - Recurrent Neural Network (RNN)
-- Gate Recurrent Unit (GRU)
+- Gated Recurrent Units (GRU)
 - Decomposition Linear (DLinear)
 
 The implementation of each model is stored in the `Model` folder.
 
 ## 4. EVALUATION
-Dataset splited into training and testing sets with a ratio of 80:20, 90:10, and 70:30. The models are evaluated using the following metrics: 
+Dataset splited into training and testing sets with a ratio of 80:20, 90:10, and 70:30. The models are evaluated using the following metrics:
 - Mean Squared Error (MSE)
 - Mean Absolute Error (MAE)
 - Root Mean Squared Error (RMSE)
