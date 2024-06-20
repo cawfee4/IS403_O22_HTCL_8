@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1718882504.34588 "d:/hocTap/nam3/hk2/phanTichData/IS403_O22_HTCL_8/Latex/TemplatePaper.tex" "TemplatePaper.pdf" "TemplatePaper" 1718882506.06192 0
+["pdflatex"] 1718887504.94167 "d:/hocTap/nam3/hk2/phanTichData/IS403_O22_HTCL_8/Latex/TemplatePaper.tex" "TemplatePaper.pdf" "TemplatePaper" 1718887507.44964 0
   "C:/Users/Admin/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1716624776 82507 a9eef8696c92627b87e9975edea03b2a ""
   "C:/Users/Admin/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1716624740 24240354 bcb6231790459623bb45684ea23ea328 ""
   "C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc" 1458473887 4993 80dc9bab7f31fb78a000ccfed0e27cab ""
@@ -106,8 +106,8 @@
   "C:/Users/Admin/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1700127522 55487 80a65caedd3722f4c20a14a69e785d8f ""
   "C:/Users/Admin/AppData/Local/Programs/MiKTeX/tex/latex/xkeyval/xkeyval.sty" 1656236919 4937 4ce600ce9bd4ec84d0250eb6892fcf4f ""
   "IEEEtran.cls" 1718878255 288304 5b2e4fa15b0f7eabb840ebf67df4c0f7 ""
-  "TemplatePaper.aux" 1718882505 7265 22a2be57d57f8322a9605240afe8ac1c "pdflatex"
-  "TemplatePaper.tex" 1718882503 46099 5fdd2eb9ed741293b3dc74b04af4cb61 ""
+  "TemplatePaper.aux" 1718887507 7265 22a2be57d57f8322a9605240afe8ac1c "pdflatex"
+  "TemplatePaper.tex" 1718887503 46098 a6fc522d2f9ad3cfc61106a65df822c9 ""
   "bibliography/Figure/ARIMA_FPT_73.png" 1718878255 53522 9859733a0bf327fb5635f5d5f32cf3a6 ""
   "bibliography/Figure/CMG_Boxplot.png" 1718878255 19640 af5bfd285400c60a5c051b6e6c3133ce ""
   "bibliography/Figure/CMG_histogram.png" 1718878255 19843 326759315eb77a57ecbfa8d988b167f3 ""
@@ -128,7 +128,7 @@
   "bibliography/Figure/SARIMAX_ITD_73.png" 1718878255 60135 1520142cb217cc05f1d6f07ce7f5766c ""
   "bibliography/Figure/What-is-Recurrent-Neural-Network.jpg" 1718878255 20700 9f26710c2e971f5e302163bf50f0c88e ""
   "bibliography/Logo_HTTT.png" 1718878255 201761 a75644caf3356abb594a9638af377093 ""
-  "d:/hocTap/nam3/hk2/phanTichData/IS403_O22_HTCL_8/Latex/TemplatePaper.tex" 1718882503 46099 5fdd2eb9ed741293b3dc74b04af4cb61 ""
+  "d:/hocTap/nam3/hk2/phanTichData/IS403_O22_HTCL_8/Latex/TemplatePaper.tex" 1718887503 46098 a6fc522d2f9ad3cfc61106a65df822c9 ""
   "ieeeojies.cls" 1718878255 44948 b3f6f333a7370cfc79757c7102125425 ""
   (generated)
   "TemplatePaper.aux"
