@@ -267,8 +267,16 @@ In Figure 9, $\sigma$ is the sigmoid function shown in equation (13), whose outp
     tanh(x) = \frac{e^x - e^{-x}}{e^x + e^{-x}}
 \end{equation}
 
-where $W_f, W_i, W_c$ and $W_o$ are input weights, $b_f, b_i, b_c$ and $b_o$ are bias weights, $t$ represents the current time state, and $t - 1$ is the previous time state, $X$ represents input; $H$ represents output and $C$ is the cell status.
-
+where:
+\begin{itemize}
+    \item $W_f, W_i, W_c$ and $W_o$ are input weights
+    \item $b_f, b_i, b_c$ and $b_o$ are bias weights
+    \item $t$ represents the current time state
+    \item $t - 1$ is the previous time state
+    \item $X$ represents input
+    \item $H$ represents output
+    \item $C$ is the cell status
+\end{itemize}
 \subsection{Gate Recurrent Unit}
 GRU is one of the most popular improved variants of RNN with a special gated recurrent neural network based on optimized LSTM. The GRU internal structure is similar to the internal structure of the LSTM, except that the GRU associates the input gate and the forget gate in the LSTM unit into a single update gate. This model has two gates: one is the update gate, which controls the extent and retains previous information in the current state; the other represents the reset gate which determines whether the previous information and the current state are to be associated \cite{b14}. Figure 10 shows the basic design of a GRU unit.
 \begin{figure} [H]
@@ -290,8 +298,13 @@ According to Figure 10, the formulas of GRU can be given as:
 \begin{equation}
     h_t = (1 - z_t) * a_t + z_t * h_{t - 1}
 \end{equation}
-where $X_t$ is the vector input of training data at time $t$, and $h_t$ is the outcome of the current layer at time $t$. $z_t$ and $r_t$ represent the update and the reset gates respectively at is the candidate activation.
-
+where:
+\begin{itemize}
+\item $X_t$ is the vector input of training data at time $t$.
+\item $h_t$ is the outcome of the current layer at time $t$.
+\item $z_t$ and $r_t$ represent the update and the reset gates respectively.
+\item $t$ is the candidate activation.
+\end{itemize}
 \subsection{Gradient Boosting Regressor}
 A gradient boosting regressor model involves an ensemble learning approach where robust forecasting models are formed by integrating several individual regression trees (decision trees) that are referred to as weak learners. Such an algorithm reduces the error rate of weakly learned models (regressors or classifiers). Weakly learned models are those which have a high bias regarding the training dataset, with low variance and regularization, and whose outputs are considered only somewhat improved when compared with arbitrary guesses \cite{b11}. Generally, boosting algorithms contains three components, namely, an additive model, weak learners, and a loss function.
 
@@ -377,78 +390,78 @@ The final forecast \( \hat{\mathbf{x}}(t+h) \) is obtained by combining the pred
 \end{equation}
 DLinear offers an efficient and effective approach to time series forecasting by leveraging decomposition and linear transformations. This model addresses the limitations of traditional Transformers, making it suitable for long-term forecasting tasks.
 \section{RESULT}
-In this section, we will evaluate eight different models in forecasting: Linear Regression, ARIMA, SARIMAX, LSTM, GRU, DLinear, RNN, and Gradient Boosting Regressor. Initially, we will preprocess the original time series dataset. Following preprocessing, we will divide the data into training, testing, and validation sets using three different ratios: 60:20:20, 70:20:10, and 80:20:10. Each model will be trained on the training set and subsequently used to make predictions on the test and validation sets. The performance of these models will be assessed using the following evaluation metrics: Mean Squared Error (MSE), Mean Absolute Error (MAE), and Root Mean Squared Error (RMSE). The results are presented in the tables below.
+In this section, we will evaluate eight different models in forecasting: Linear Regression, ARIMA, SARIMAX, LSTM, GRU, DLinear, RNN, and Gradient Boosting Regressor. Initially, we will preprocess the original time series dataset. Following preprocessing, we will divide the data into train and test sets using three different ratios: 70:30, 80:20 and 90:10. Each model will be trained on the training set and subsequently used to make predictions on the test set. The performance of these models will be assessed using the following evaluation metrics: Mean Squared Error (MSE), Mean Absolute Error (MAE), and Root Mean Squared Error (RMSE). The results are presented in the tables below.
 \subsection{CMG}
 \begin{table}[H]
     \renewcommand{\arraystretch}{1.5}
     \centering
     \begin{tabular}{|c|c|p{1cm}|p{1cm}|p{1cm}|}
         \hline
-        \textbf{Model} & \textbf{Train/Test/Val} & \textbf{RMSE} & \textbf{MAE} & \textbf{MAPE} \\
+        \textbf{Model} & \textbf{Train/Test} & \textbf{RMSE} & \textbf{MAE} & \textbf{MAPE} \\
         \hline
         % Linear Regression
         \multirow{3}{*}{LR}
-                       & 6 - 2 - 2               & 4014.54       & 3113.24      & 9.16\%        \\
+                       & 7 - 3             & 4776.167       & 3242.941      & 8.655\%        \\
         \cline{2-5}
-                       & 7 - 2 - 1               & 3479.93       & 2922.17      & 9.19\%        \\
+                       & 8 - 2               & 5613.133       & 2972.978      & 6.365\%        \\
         \cline{2-5}
-                       & 8 - 1 - 1               & 1906.99       & 1597.14      & 4.43\%        \\
+                       & 9 - 1               &  7630.459       & 4249.712      & 8.081\%        \\
         \hline
         % ARIMA
         \multirow{3}{*}{ARIMA}
-                       & 6 - 2 - 2               & 2295.8        & 1886.6       & 5.51\%        \\
+                       & 7 - 3             & 5590.559        & 3396.414       & 8.036\%        \\
         \cline{2-5}
-                       & 7 - 2 - 1               & 2295.8        & 1886.6       & 5.51\%        \\
+                       & 8 - 2               & 7949.917        & 5917.192       & 13.443\%        \\
         \cline{2-5}
-                       & 8 - 1 - 1               & 2295.8        & 1886.6       & 5.51\%        \\
+                       & 9 - 1               & 8392.384        & 5363.964       & 10.641\%        \\
         \hline
         % SARIMAX
         \multirow{3}{*}{SARIMAX}
-                       & 6 - 2 - 2               & 1217.97       & 1098.21      & 3.42\%        \\
+                       & 7 - 3             & 4790.479       & 3368.235      & 8.027\%        \\
         \cline{2-5}
-                       & 7 - 2 - 1               & 649.34        & 507.62       & 1.53\%        \\
+                       & 8 - 2               & 1606.532        & 1266.783       & 2.998\%        \\
         \cline{2-5}
-                       & 8 - 1 - 1               & 1035.35       & 850.25       & 2.28\%        \\
+                       & 9 - 1               & 1880.078       & 1333.986       & 2.803\%        \\
         \hline
         % RNN
         \multirow{3}{*}{RNN}
-                       & 6 - 2 - 2               & 1323.78       & 1019.18      & 3.13\%        \\
+                       & 7 - 3             & 1310.051       & 803.027      & 2.022\%        \\
         \cline{2-5}
-                       & 7 - 2 - 1               & 766.84        & 555.26       & 1.65\%        \\
+                       & 8 - 2               & 1434.569        & 973.583       & 2.283\%        \\
         \cline{2-5}
-                       & 8 - 1 - 1               & 773.26        & 569.71       & 1.55\%        \\
+                       & 9 - 1               & 1899.021        & 1241.602       & 2.615\%        \\
         \hline
         % GRU
         \multirow{3}{*}{GRU}
-                       & 6 - 2 - 2               & 1208.25       & 885.54       & 2.71\%        \\
+                       & 7 - 3             & 1256.333       & 800.386       & 2.037\%        \\
         \cline{2-5}
-                       & 7 - 2 - 1               & 765.72        & 557.01       & 1.66\%        \\
+                       & 8 - 2               & 1636.782        & 1039.329       & 2.393\%        \\
         \cline{2-5}
-                       & 8 - 1 - 1               & 1058.28       & 864.53       & 2.32\%        \\
+                       & 9 - 1               & 1901.258       & 1256.691       & 2.654\%        \\
         \hline
         % LSTM
         \multirow{3}{*}{LSTM}
-                       & 6 - 2 - 2               & 1216.88       & 894.34       & 2.74\%        \\
+                       & 7 - 3             & 1455.690       & 834.627       & 2.051\%        \\
         \cline{2-5}
-                       & 7 - 2 - 1               & 888.80        & 703.16       & 2.11\%        \\
+                       & 8 - 2               & 1687.759        & 1013.020       & 2.287\%        \\
         \cline{2-5}
-                       & 8 - 1 - 1               & 760.21        & 557.73       & 1.51\%        \\
+                       & 9 - 1               & 1975.455        & 1264.345       & 2.642\%        \\
         \hline
         % GBR
         \multirow{3}{*}{GBR}
-                       & 6 - 2 - 2               & 1151.03       & 800.82       & 2.41\%        \\
+                       & 7 - 3             & 4805.334       & 1856.740       & 3.867\%        \\
         \cline{2-5}
-                       & 7 - 2 - 1               & 609.51        & 435.54       & 1.29\%        \\
+                       & 8 - 2               & 5885.479        & 2586.670       & 5.133\%        \\
         \cline{2-5}
-                       & 8 - 1 - 1               & 622.22        & 446.29       & 1.20\%        \\
+                       & 9 - 1               & 8742.394        & 5095.510       & 9.776\%        \\
         \hline
         % DLinear
         \multirow{3}{*}{DLinear}
-                       & 6 - 2 - 2               & 732.98        & 577.72       & 1.76\%        \\
+                       & 7 - 3             & 941.648        & 610.784       & 1.590\%        \\
         \cline{2-5}
-                       & 7 - 2 - 1               & 731.06        & 575.41       & 1.75\%        \\
+                       & 8 - 2               & 995.657        & 620.887       & 1.442\%        \\
         \cline{2-5}
-                       & 8 - 1 - 1               & 645.57        & 475.18       & 1.46\%        \\
+                       & 9 - 1               & 1294.638        & 911.389       & 1.972\%        \\
         \hline
     \end{tabular}
     \caption{Performance Metrics on CMG's test set}
@@ -458,73 +471,73 @@ In this section, we will evaluate eight different models in forecasting: Linear 
 \begin{table}[H]
     \renewcommand{\arraystretch}{1.5}
     \centering
-    \begin{tabular}{|c|c|p{1cm}|p{1cm}|p{1cm}|}
+    \begin{tabular}{|c|c|p{1.2cm}|p{1.2cm}|p{1cm}|}
         \hline
-        \textbf{Model} & \textbf{Train/Test/Val} & \textbf{RMSE} & \textbf{MAE} & \textbf{MAPE} \\
+        \textbf{Model} & \textbf{Train/Test} & \textbf{RMSE} & \textbf{MAE} & \textbf{MAPE} \\
         \hline
         % Linear Regression
         \multirow{3}{*}{LR}
-                       & 6 - 2 - 2               & 12021.71      & 10138.72     & 15.22\%       \\
+                       & 7 - 3             & 13208.213      & 11051.009     & 13.721\%       \\
         \cline{2-5}
-                       & 7 - 2 - 1               & 12399.92      & 11311.74     & 16.21\%       \\
+                       & 8 - 2               & 15941.794      & 12193.876     & 11.668\%       \\
         \cline{2-5}
-                       & 8 - 1 - 1               & 7958.24       & 6875.53      & 8.23\%        \\
+                       & 9 - 1               & 20588.570       & 16918.134      & 14.564\%        \\
         \hline
         % ARIMA
         \multirow{3}{*}{ARIMA}
-                       & 6 - 2 - 2               & 9631          & 6259.7       & 7.3\%         \\
+                       & 7 - 3             & 19697.622          & 13787.839       & 13.429\%         \\
         \cline{2-5}
-                       & 7 - 2 - 1               & 9631          & 6259.7       & 7.3\%         \\
+                       & 8 - 2               & 25634.306          & 21517.835       & 20.593\%         \\
         \cline{2-5}
-                       & 8 - 1 - 1               & 9631          & 6259.7       & 7.3\%         \\
+                       & 9 - 1               & 16524.874          & 11914.706       & 9.908\%         \\
         \hline
         % SARIMAX
         \multirow{3}{*}{SARIMAX}
-                       & 6 - 2 - 2               & 1995.53       & 1544.12      & 1.75\%        \\
+                       & 7 - 3             & 13980.543       & 10637.005      & 10.691\%        \\
         \cline{2-5}
-                       & 7 - 2 - 1               & 1076.95       & 698.12       & 0.91\%        \\
+                       & 8 - 2               & 2689.828       & 2194.418       & 2.135\%        \\
         \cline{2-5}
-                       & 8 - 1 - 1               & 1995.53       & 1544.12      & 1.75\%        \\
+                       & 9 - 1               & 11337.132       & 8609.467      & 7.251\%        \\
         \hline
         % RNN
         \multirow{3}{*}{RNN}
-                       & 6 - 2 - 2               & 1804.73       & 1284.95      & 1.89\%        \\
+                       & 7 - 3             & 2279.840       & 1514.533      & 1.633\%        \\
         \cline{2-5}
-                       & 7 - 2 - 1               & 1572.73       & 1106.49      & 1.43\%        \\
+                       & 8 - 2               & 2917.896       & 1973.960      & 1.890\%        \\
         \cline{2-5}
-                       & 8 - 1 - 1               & 2793.28       & 2309.79      & 2.68\%        \\
+                       & 9 - 1               & 3103.424       & 2241.372      & 1.969\%        \\
         \hline
         % GRU
         \multirow{3}{*}{GRU}
-                       & 6 - 2 - 2               & 1735          & 1184.36      & 1.74\%        \\
+                       & 7 - 3             & 2130.231          & 1433.697      & 1.563\%        \\
         \cline{2-5}
-                       & 7 - 2 - 1               & 1656.52       & 1142.7       & 1.47\%        \\
+                       & 8 - 2               & 2809.575       & 2001.863       & 1.955\%        \\
         \cline{2-5}
-                       & 8 - 1 - 1               & 2114.84       & 1555.88      & 1.78\%        \\
+                       & 9 - 1               & 2672.474       & 1886.464      & 1.658\%        \\
         \hline
         % LSTM
         \multirow{3}{*}{LSTM}
-                       & 6 - 2 - 2               & 1944.89       & 1448.76      & 2.11\%        \\
+                       & 7 - 3             & 3157.352       & 2151.767      & 2.231\%        \\
         \cline{2-5}
-                       & 7 - 2 - 1               & 1739.26       & 1237.97      & 1.58\%        \\
+                       & 8 - 2               & 3512.565       & 2483.480      & 2.357\%        \\
         \cline{2-5}
-                       & 8 - 1 - 1               & 3425.63       & 2921.82      & 3.36\%        \\
+                       & 9 - 1               & 2681.850       & 1870.596      & 1.642\%        \\
         \hline
         % GBR
         \multirow{3}{*}{GBR}
-                       & 6 - 2 - 2               & 2033.93       & 1433.24      & 2.06\%        \\
+                       & 7 - 3             & 22226.841       & 14757.446      & 13.947\%        \\
         \cline{2-5}
-                       & 7 - 2 - 1               & 9246.01       & 5228.78      & 5.82\%        \\
+                       & 8 - 2               & 27359.470       & 22065.749      & 20.665\%        \\
         \cline{2-5}
-                       & 8 - 1 - 1               & 13305.43      & 10220.85     & 11.1\%        \\
+                       & 9 - 1               & 18090.845      & 13052.712     & 10.774\%        \\
         \hline
         % DLinear
         \multirow{3}{*}{DLinear}
-                       & 6 - 2 - 2               & 1430.42       & 1122.67      & 1.49\%        \\
+                       & 7 - 3             & 1521.300       & 1050.039      & 1.185\%        \\
         \cline{2-5}
-                       & 7 - 2 - 1               & 1336.28       & 1007.43      & 1.33\%        \\
+                       & 8 - 2               & 1563.924       & 1083.996      & 1.094\%        \\
         \cline{2-5}
-                       & 8 - 1 - 1               & 1216.28       & 891.05       & 1.17\%        \\
+                       & 9 - 1               & 1826.883       & 1288.223       & 1.161\%        \\
         \hline
     \end{tabular}
     \caption{Performance Metrics on FPT's test set}
@@ -536,71 +549,71 @@ In this section, we will evaluate eight different models in forecasting: Linear 
     \centering
     \begin{tabular}{|c|c|p{1cm}|p{1cm}|p{1cm}|}
         \hline
-        \textbf{Model} & \textbf{Train/Test/Val} & \textbf{RMSE} & \textbf{MAE} & \textbf{MAPE} \\
+        \textbf{Model} & \textbf{Train/Test} & \textbf{RMSE} & \textbf{MAE} & \textbf{MAPE} \\
         \hline
         % Linear Regression
         \multirow{3}{*}{LR}
-                       & 6 - 2 - 2               & 5590.21       & 5395.83      & 50.51\%       \\
+                       & 7 - 3              & 5049.939       & 4772.159      & 45.394\%       \\
         \cline{2-5}
-                       & 7 - 2 - 1               & 3976.87       & 3816.96      & 34.74\%       \\
+                       & 8 - 2               & 4119.015       & 3919.348      & 38.153\%       \\
         \cline{2-5}
-                       & 8 - 1 - 1               & 3144.64       & 2962.17      & 27.54\%       \\
+                       & 9 - 1               & 3584.478       & 3542.331      & 35.514\%       \\
         \hline
         % ARIMA
         \multirow{3}{*}{ARIMA}
-                       & 6 - 2 - 2               & 1325.59       & 1168.96      & 10.16\%       \\
+                       & 7 - 3              & 1205.208       & 1073.681      & 9.719\%       \\
         \cline{2-5}
-                       & 7 - 2 - 1               & 1325.59       & 1168.96      & 10.16\%       \\
+                       & 8 - 2               & 2181.237      & 1900.551      & 18.846\%       \\
         \cline{2-5}
-                       & 8 - 1 - 1               & 1325.59       & 1168.96      & 10.16\%       \\
+                       & 9 - 1               & 595.809       & 380.715      & 3.592\%       \\
         \hline
         % SARIMAX
         \multirow{3}{*}{SARIMAX}
-                       & 6 - 2 - 2               & 224.92        & 172.2        & 1.56\%        \\
+                       & 7 - 3              & 187.480        & 153.968        & 1.417\%        \\
         \cline{2-5}
-                       & 7 - 2 - 1               & 197.67        & 161.55       & 1.45\%        \\
+                       & 8 - 2               & 148.763        & 115.969       & 1.094\%        \\
         \cline{2-5}
-                       & 8 - 1 - 1               & 145.77        & 114.32       & 1.03\%        \\
+                       & 9 - 1               & 150.452        & 121.827       & 1.201\%        \\
         \hline
         % RNN
         \multirow{3}{*}{RNN}
-                       & 6 - 2 - 2               & 411.11        & 303.07       & 2.77\%        \\
+                       & 7 - 3              & 321.746        & 223.305       & 2.045\%        \\
         \cline{2-5}
-                       & 7 - 2 - 1               & 327.4         & 230.8        & 2.08\%        \\
+                       & 8 - 2               & 272.520         & 191.926       & 1.823\%        \\
         \cline{2-5}
-                       & 8 - 1 - 1               & 289.91        & 212.55       & 1.97\%        \\
+                       & 9 - 1               & 285.653        & 210.604       & 2.037\%        \\
         \hline
         % GRU
         \multirow{3}{*}{GRU}
-                       & 6 - 2 - 2               & 436.12        & 326.14       & 3.01\%        \\
+                       & 7 - 3              & 308.320        & 212.661       & 1.948\%        \\
         \cline{2-5}
-                       & 7 - 2 - 1               & 320.45        & 228.5        & 2.06\%        \\
+                       & 8 - 2               & 287.198        & 216.931        & 2.064\%        \\
         \cline{2-5}
-                       & 8 - 1 - 1               & 314.66        & 250.91       & 2.34\%        \\
+                       & 9 - 1               & 287.089        & 187.537       & 1.791\%        \\
         \hline
         % LSTM
         \multirow{3}{*}{LSTM}
-                       & 6 - 2 - 2               & 404.67        & 291.17       & 2.67\%        \\
+                       & 7 - 3              & 313.356        & 215.751       & 1.972\%        \\
         \cline{2-5}
-                       & 7 - 2 - 1               & 318.7         & 227.92       & 2.05\%        \\
+                       & 8 - 2               & 269.044         & 190.121       & 1.803\%        \\
         \cline{2-5}
-                       & 8 - 1 - 1               & 284.67        & 219.03       & 2.05\%        \\
+                       & 9 - 1               & 278.773        & 186.645       & 1.786\%        \\
         \hline
         % GBR
         \multirow{3}{*}{GBR}
-                       & 6 - 2 - 2               & 442.19        & 346.47       & 3.16\%        \\
+                       & 7 - 3              & 287.311        & 224.065       & 2.053\%        \\
         \cline{2-5}
-                       & 7 - 2 - 1               & 302.22        & 238.29       & 2.13\%        \\
+                       & 8 - 2               & 239.767        & 182.027       &  1.735\%        \\
         \cline{2-5}
-                       & 8 - 1 - 1               & 232.70        & 170.19       & 1.55\%        \\
+                       & 9 - 1               & 267.945        & 209.760       & 2.055\%        \\
         \hline
         % DLinear
         \multirow{3}{*}{DLinear}
-                       & 6 - 2 - 2               & 287.85        & 217.10       & 1.96\%        \\
+                       & 7 - 3              & 253.810        & 185.018       & 1.700\%        \\
         \cline{2-5}
-                       & 7 - 2 - 1               & 335.67        & 267.45       & 2.41\%        \\
+                       & 8 - 2               & 250.853        & 198.298       & 1.875\%        \\
         \cline{2-5}
-                       & 8 - 1 - 1               & 273.21        & 201.84       & 1.82\%        \\
+                       & 9 - 1               & 286.739        & 227.045       & 2.211\%        \\
         \hline
     \end{tabular}
     \caption{Performance Metrics on ITD's test set}
@@ -609,54 +622,74 @@ In this section, we will evaluate eight different models in forecasting: Linear 
 \subsection{Forecasting Plot}
 \begin{figure} [H]
     \centering
-    \includegraphics[width=0.4\textwidth]{bibliography/Figure/LinearRegression_CMG_721_90.png}
-    \caption{Linear Regression - CMG - 721}
-    \label{fig:LR_CMG_721_90}
+    \includegraphics[width=0.4\textwidth]{bibliography/Figure/LR_CMG_73.png}
+    \caption{Linear Regression - CMG - 73}
+    \label{fig:LR_CMG_73}
 \end{figure}
 \begin{figure} [H]
     \centering
-    \includegraphics[width=0.4\textwidth]{bibliography/Figure/ARIMA_FPT_721_90.png}
-    \caption{ARIMA - FPT - 721}
-    \label{fig:ARIMA_FPT_721_90}
+    \includegraphics[width=0.4\textwidth]{bibliography/Figure/ARIMA_FPT_73.png}
+    \caption{ARIMA - FPT - 73}
+    \label{fig:ARIMA_FPT_73}
 \end{figure}
 \begin{figure} [H]
     \centering
-    \includegraphics[width=0.4\textwidth]{bibliography/Figure/SARIMAX_ITD_721_90.png}
-    \caption{SARIMAX - ITD - 721}
-    \label{fig:SARIMAX_ITD_721_90}
+    \includegraphics[width=0.4\textwidth]{bibliography/Figure/SARIMAX_ITD_73.png}
+    \caption{SARIMAX - ITD - 73}
+    \label{fig:SARIMAX_ITD_73}
 \end{figure}
 \begin{figure} [H]
     \centering
-    \includegraphics[width=0.4\textwidth]{bibliography/Figure/RNN_CMG_721_90.png}
-    \caption{RNN - CMG - 721}
-    \label{fig:RNN_CMG_721_90}
+    \includegraphics[width=0.4\textwidth]{bibliography/Figure/RNN_CMG_73.png}
+    \caption{RNN - CMG - 73}
+    \label{fig:RNN_CMG_73}
 \end{figure}
 \begin{figure} [H]
     \centering
-    \includegraphics[width=0.4\textwidth]{bibliography/Figure/GRU_FPT_721_90.png}
-    \caption{GRU - FPT - 721}
-    \label{fig:GRU_FPT_721_90}
+    \includegraphics[width=0.4\textwidth]{bibliography/Figure/GRU_FPT_73.png}
+    \caption{GRU - FPT - 73}
+    \label{fig:GRU_FPT_73}
 \end{figure}
 \begin{figure} [H]
     \centering
-    \includegraphics[width=0.4\textwidth]{bibliography/Figure/LSTM_ITD_721_90.png}
-    \caption{LSTM - ITD - 721}
-    \label{fig:LSTM_ITD_721_90}
+    \includegraphics[width=0.4\textwidth]{bibliography/Figure/LSTM_ITD_73.png}
+    \caption{LSTM - ITD - 73}
+    \label{fig:LSTM_ITD_73}
 \end{figure}
 \begin{figure} [H]
     \centering
-    \includegraphics[width=0.4\textwidth]{bibliography/Figure/GBR_CMG_721_90.png}
-    \caption{GBR - CMG - 721}
-    \label{fig:GBR_CMG_721_90}
+    \includegraphics[width=0.4\textwidth]{bibliography/Figure/GBR_CMG_73.png}
+    \caption{GBR - CMG - 73}
+    \label{fig:GBR_CMG_73}
 \end{figure}
 \begin{figure} [H]
     \centering
-    \includegraphics[width=0.4\textwidth]{bibliography/Figure/DLinear_FPT_721_90.png}
-    \caption{DLinear - FPT - 721}
-    \label{fig:DLinear_FPT_721_90}
+    \includegraphics[width=0.4\textwidth]{bibliography/Figure/DLinear_FPT_73.png}
+    \caption{DLinear - FPT - 73}
+    \label{fig:DLinear_FPT_73}
 \end{figure}
 \section{Conclusion}
-From the outcomes, we can see that DLinear have the best overall performance in all three datasets. The results demonstrate that DLinear overall outperforms other models in terms of RMSE, MAE, and MAPE across all three datasets. The DLinear model is particularly effective in capturing the trend and seasonal components of the time series data, leading to more accurate and reliable forecasts. The results also show that the performance of the models varies depending on the dataset and the training/testing/validation split. In general, the LSTM and GRU models perform well across all three datasets, while the ARIMA and SARIMAX models show mixed results. The Gradient Boosting Regressor model also performs well in some cases, but is less consistent across the datasets. From the plot, we can see that DLinear perform well on trained dataset but not perform well in forecasting.
+From the outcomes of 8 models on 3 stocks and in each ratio, we can see that:
+\begin{itemize}
+    \item For CMG:
+    \begin{itemize}
+        \item For 70:30, the best model is DLinear with the lowest RMSE, MAE, and MAPE.
+        \item For 80:20, the best model is DLinear with the lowest RMSE, MAE, and MAPE.
+        \item For 90:10, the best model is DLinear with the lowest RMSE, MAE, and MAPE.
+    \end{itemize}
+    \item For FPT:
+    \begin{itemize}
+        \item For 70:30, the best model is DLinear with the lowest RMSE, MAE, and MAPE.
+        \item For 80:20, the best model is DLinear with the lowest RMSE, MAE, and MAPE.
+        \item For 90:10, the best model is DLinear with the lowest RMSE, MAE, and MAPE.
+    \end{itemize}
+    \item For ITD:
+    \begin{itemize}
+        \item For 70:30, the best model is SARIMAX with the lowest RMSE, MAE, and MAPE.
+        \item For 80:20, the best model is SARIMAX with the lowest RMSE, MAE, and MAPE.
+        \item For 90:10, the best model is SARIMAX with the lowest RMSE, MAE, and MAPE.
+    \end{itemize}
+\end{itemize}
 %% UNCOMMENT these lines below (and remove the 2 commands above) if you want to embed the bibliografy.
 \begin{thebibliography}{00}
     \bibitem{b1} Pai, P.-F. and Lin, C.H. (2005) ‘A hybrid ARIMA and support vector machines model in stock price forecasting’.
