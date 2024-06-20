@@ -11,7 +11,7 @@
 This repository is created for the final project of the course `IS403.HTCL` - Data Analysis in Business at [University of Information Technology](https://www.uit.edu.vn/). The project aims to forecast stock prices of Vietnamese tech companies using statistical and machine learning models. The project is implemented by **Group 8**, including 3 members: Ninh Thien Bao (L), Dao Tien Dat, Dao Minh Huy.
 
 ## 2. DATASETS
-- The datasets collected by [Vnstock3](https://vnstocks.com/). The datasets contain stock prices of 3 Vietnamese tech companies spanning from **March 1, 2019**, to **March 1, 2024**: 
+- The datasets collected by [Vnstock3](https://vnstocks.com/). The datasets contain stock prices of 3 Vietnamese tech companies, spanning from **March 1, 2019**, to **March 1, 2024**: 
   - **FPT Corporation** - FPT
   - **CMC Corporation** - CMG
   - **Innovative Technology Development Corporation** - ITD
@@ -93,7 +93,7 @@ Name | Role | Work |
 4. Zhou, T., et al. (2022). Are Transformers Effective for Time Series Forecasting?. arXiv:2205.13504v3 [cs.AI] 17 Aug 2022.
 5. Other references as listed in the provided document.
 
-## 7. Authors
+## 7. AUTHORS
 
 - Ninh Thien Bao, Faculty of Information Systems, University of Information Technology (21520621@gm.uit.edu.vn)
 - Dao Tien Dat, Faculty of Information Systems, University of Information Technology (21521930@gm.uit.edu.vn)
