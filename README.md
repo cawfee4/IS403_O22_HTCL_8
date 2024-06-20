@@ -11,7 +11,7 @@
 This repository is created for the final project of the course `IS403.HTCL` - Data Analysis in Business at [University of Information Technology](https://www.uit.edu.vn/). The project aims to forecast stock prices of Vietnamese tech companies using statistical and machine learning models. The project is implemented by **Group 8**, including 3 members: Ninh Thien Bao (L), Dao Tien Dat, Dao Minh Huy.
 
 ## 2. DATASETS
-- The datasets collected by [Vnstock3](https://vnstocks.com/). The datasets contain stock prices of 3 Vietnamese tech companies, spanning from **March 1, 2019**, to **March 1, 2024**: 
+- The datasets collected by [Vnstock3](https://vnstocks.com/). The datasets contain stock prices of 3 Vietnamese tech companies, spanning from **March 1, 2019**, to **June 1, 2024**: 
   - **FPT Corporation** - FPT
   - **CMC Corporation** - CMG
   - **Innovative Technology Development Corporation** - ITD
