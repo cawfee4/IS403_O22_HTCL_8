@@ -41,9 +41,9 @@ Dataset splited into training and testing sets with a ratio of 80:20, 90:10, and
 ## 5. WORK DISTRIBUTION
 Name | Role | Work |
 | --- | --- | --- |
-| Ninh Thien Bao | Leader | Data preprocessing and implemented LR, LSTM model. Contributed edit the project document. |
-| Dao Tien Dat |  | Implemented GBR, RNN and DLinear models. Contribued edit the project document and literature review. |
-| Dao Minh Huy |  | Implemented ARIMA, SARIMAX and GRU model. Contributed edit the project document. |
+| Ninh Thien Bao | Leader | Data preprocessing and implemented Linear Regression, GBR, LSTM model. Contributed in editing the project document. |
+| Dao Tien Dat |  | Implemented Descriptive statistics, RNN and DLinear models. Contributed edit the project document and literature review. |
+| Dao Minh Huy |  | Implemented ARIMA, SARIMAX and GRU model. Contributed in editing the project document. |
 
 ### FOLDER STRUCTURE
 ```
