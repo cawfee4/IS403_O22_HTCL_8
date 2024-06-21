@@ -321,6 +321,7 @@ INPUT .\bibliography\Logo_HTTT.png
 INPUT .\bibliography\Logo_HTTT.png
 INPUT .\bibliography\Logo_HTTT.png
 INPUT .\bibliography\Logo_HTTT.png
+<<<<<<< HEAD
 INPUT C:\Users\datdao2003\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\helvetic\phvr8t.tfm
 INPUT .\bibliography\Figure\Illu_DLinear.png
 INPUT .\bibliography\Figure\Illu_DLinear.png
@@ -329,10 +330,14 @@ INPUT .\bibliography\Figure\Illu_DLinear.png
 INPUT .\bibliography\Figure\Illu_DLinear.png
 INPUT .\bibliography\Figure\Illu_DLinear.png
 INPUT .\bibliography\Figure\Illu_DLinear.png
+=======
+INPUT C:\Users\cawfe\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\helvetic\phvr8t.tfm
+>>>>>>> main
 INPUT .\bibliography\Logo_HTTT.png
 INPUT .\bibliography\Logo_HTTT.png
 INPUT .\bibliography\Logo_HTTT.png
 INPUT .\bibliography\Logo_HTTT.png
+<<<<<<< HEAD
 INPUT C:\Users\datdao2003\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\helvetic\phvr8t.vf
 INPUT C:\Users\datdao2003\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\helvetic\phvr8r.tfm
 INPUT C:\Users\datdao2003\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx10.tfm
@@ -341,6 +346,23 @@ INPUT C:\Users\datdao2003\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx
 INPUT C:\Users\datdao2003\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx8.tfm
 INPUT C:\Users\datdao2003\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx6.tfm
 INPUT C:\Users\datdao2003\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmb8t.tfm
+=======
+INPUT C:\Users\cawfe\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\helvetic\phvr8t.vf
+INPUT C:\Users\cawfe\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\helvetic\phvr8r.tfm
+INPUT .\bibliography\Figure\Illu_DLinear.png
+INPUT .\bibliography\Figure\Illu_DLinear.png
+INPUT .\bibliography\Figure\Illu_DLinear.png
+INPUT .\bibliography\Figure\Illu_DLinear.png
+INPUT .\bibliography\Figure\Illu_DLinear.png
+INPUT .\bibliography\Figure\Illu_DLinear.png
+INPUT .\bibliography\Figure\Illu_DLinear.png
+INPUT C:\Users\cawfe\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx10.tfm
+INPUT C:\Users\cawfe\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx7.tfm
+INPUT C:\Users\cawfe\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx5.tfm
+INPUT C:\Users\cawfe\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx8.tfm
+INPUT C:\Users\cawfe\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx6.tfm
+INPUT C:\Users\cawfe\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmb8t.tfm
+>>>>>>> main
 INPUT .\bibliography\Logo_HTTT.png
 INPUT .\bibliography\Logo_HTTT.png
 INPUT .\bibliography\Logo_HTTT.png
@@ -349,8 +371,13 @@ INPUT .\bibliography\Logo_HTTT.png
 INPUT .\bibliography\Logo_HTTT.png
 INPUT .\bibliography\Logo_HTTT.png
 INPUT .\bibliography\Logo_HTTT.png
+<<<<<<< HEAD
 INPUT C:\Users\datdao2003\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\ptmb8t.vf
 INPUT C:\Users\datdao2003\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmb8r.tfm
+=======
+INPUT C:\Users\cawfe\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\ptmb8t.vf
+INPUT C:\Users\cawfe\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmb8r.tfm
+>>>>>>> main
 INPUT .\bibliography\Figure\LR_CMG_73.png
 INPUT .\bibliography\Figure\LR_CMG_73.png
 INPUT .\bibliography\Figure\LR_CMG_73.png
@@ -400,6 +427,7 @@ INPUT .\bibliography\Figure\GBR_CMG_73.png
 INPUT .\bibliography\Figure\GBR_CMG_73.png
 INPUT .\bibliography\Figure\GBR_CMG_73.png
 INPUT .\bibliography\Figure\GBR_CMG_73.png
+<<<<<<< HEAD
 INPUT .\bibliography\Logo_HTTT.png
 INPUT .\bibliography\Logo_HTTT.png
 INPUT .\bibliography\Logo_HTTT.png
@@ -413,18 +441,43 @@ INPUT .\bibliography\Figure\DLinear_FPT_73.png
 INPUT .\bibliography\Figure\DLinear_FPT_73.png
 INPUT C:\Users\datdao2003\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmb8t.tfm
 INPUT C:\Users\datdao2003\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmr8t.tfm
+=======
+>>>>>>> main
 INPUT .\bibliography\Logo_HTTT.png
 INPUT .\bibliography\Logo_HTTT.png
 INPUT .\bibliography\Logo_HTTT.png
 INPUT .\bibliography\Logo_HTTT.png
+<<<<<<< HEAD
 INPUT C:\Users\datdao2003\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\ptmb8t.vf
 INPUT C:\Users\datdao2003\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmb8r.tfm
 INPUT C:\Users\datdao2003\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\ptmr8t.vf
 INPUT C:\Users\datdao2003\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmr8r.tfm
+=======
+INPUT .\bibliography\Figure\DLinear_FPT_73.png
+INPUT .\bibliography\Figure\DLinear_FPT_73.png
+INPUT .\bibliography\Figure\DLinear_FPT_73.png
+INPUT .\bibliography\Figure\DLinear_FPT_73.png
+INPUT .\bibliography\Figure\DLinear_FPT_73.png
+INPUT .\bibliography\Figure\DLinear_FPT_73.png
+INPUT .\bibliography\Figure\DLinear_FPT_73.png
+INPUT C:\Users\cawfe\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmb8t.tfm
+INPUT C:\Users\cawfe\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmr8t.tfm
+>>>>>>> main
 INPUT .\bibliography\Logo_HTTT.png
 INPUT .\bibliography\Logo_HTTT.png
 INPUT .\bibliography\Logo_HTTT.png
 INPUT .\bibliography\Logo_HTTT.png
+<<<<<<< HEAD
+=======
+INPUT C:\Users\cawfe\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\ptmb8t.vf
+INPUT C:\Users\cawfe\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmb8r.tfm
+INPUT C:\Users\cawfe\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\ptmr8t.vf
+INPUT C:\Users\cawfe\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmr8r.tfm
+INPUT .\bibliography\Logo_HTTT.png
+INPUT .\bibliography\Logo_HTTT.png
+INPUT .\bibliography\Logo_HTTT.png
+INPUT .\bibliography\Logo_HTTT.png
+>>>>>>> main
 INPUT TemplatePaper.aux
 INPUT C:\Users\datdao2003\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx10.pfb
 INPUT C:\Users\datdao2003\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx10.pfb
