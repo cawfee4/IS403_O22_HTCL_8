@@ -399,19 +399,34 @@ where:
 \end{itemize}
 
 \subsubsection{Trend Extraction}
-The trend component $\mathbf{T}(t)$ captures the long-term progression of the time series. It can be extracted using methods such as moving averages or polynomial fitting:
+The trend component $\mathbf{T}(t)$ captures the long-term progression of the time series. It can be extracted using methods such as moving averages or polynomial fitting.
+
+Moving Average:
 
 \begin{equation}
     \mathbf{T}(t) = \frac{1}{2k+1} \sum_{i=-k}^{k} \mathbf{x}(t+i),
 \end{equation}
 
-where $k$ is the window size for the moving average.
+where:
+\begin{itemize}
+    \item $\mathbf{T}(t)$ is the moving average at time t
+    \item $\frac{1}{2k+1}$ is the normalizing factor for the average calculation. It's the reciprocal of the window size, which is $2k+1$
+    \item x$(t+i)$ is the value of the time series at time $t+i$
+    \item $k$ is the window size.
+\end{itemize}
+
 
 \subsubsection{Seasonal Component}
 The seasonal component $\mathbf{S}(t)$ captures the repeating patterns within the time series. It can be obtained by removing the trend from the original series:
 \begin{equation}
     \mathbf{S}(t) = \mathbf{x}(t) - \mathbf{T}(t).
 \end{equation}
+where:
+\begin{itemize}
+    \item $\mathbf{S}(t)$ is the seasonal component at time $t$,
+    \item $\mathbf{x}(t)$ is the value of time series at time $t$,
+    \item $\mathbf{T}(t)$ is the trend component at time $t$.
+\end{itemize}
 
 \subsubsection{Linear Modeling}
 Separate linear models are used to predict the trend and seasonal components:
