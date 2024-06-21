@@ -174,12 +174,24 @@ ARIMA models are expressed in the form of ARIMA (p,d,q) \cite{b7}. All p, d, and
           \begin{equation}
               Y = \mu + \varphi_1Y_{t-1} + \varphi_2Y_{t-2} + ... + \varphi_pY_{t-p} + \varepsilon_t
           \end{equation}
-          which: $Y$ is the current value; $\mu$ is the constant term; $p$ is the number of orders; $\varphi$ is the auto-regression coefficient and $\varepsilon_t$ is the error
+          which:
+          \begin{itemize}
+              \item $Y$ is the current value;
+              \item $\mu$ is the constant term;
+              \item $p$ is the number of orders;
+              \item $\varphi$ is the auto-regression coefficient and $\varepsilon_t$ is the error;
+          \end{itemize}
     \item MA is the Moving Average, and q is the number of terms in the moving average [5]. The equation for MA model is:
           \begin{equation}
               Y = \mu + \theta_1Y_{t-1} + \theta_2Y_{t-2} + ... + \theta_pY_{t-p} + \varepsilon_t
           \end{equation}
-          which: $Y_t$ is the current value; $\mu$ is the constant term; $p$ is the number of orders; $\theta$ is the moving average coefficient and $\varepsilon_t$ is the error
+          which:
+          \begin{itemize}
+            \item $Y_t$ is the current value;
+            \item $\mu$ is the constant term;
+            \item $p$ is the number of orders;
+            \item $\theta$ is the moving average coefficient and $\varepsilon_t$ is the error
+          \end{itemize}
     \item Last, the I part is Integrated, and d is the number of differences (order) required to make it a stationary sequence.
 \end{enumerate}
 
@@ -206,7 +218,7 @@ where:
     \item $\varepsilon_t$ is a white noise process.
 \end{itemize}
 
-SARIMAX model demonstrates the use of exogenous variables by using the concept of “regression with SARIMA errors”. The model can be written as:
+SARIMAX model demonstrates the use of exogenous variables by using the concept of “regression with SARIMA errors”. In current study, the SARIMAX method was organized to forecast the stock price, the $X$ feature is the low price of the stock.The model can be written as:
 \begin{equation}
     y_t = \beta x_t + z_t
 \end{equation}
