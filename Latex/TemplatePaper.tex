@@ -9,6 +9,9 @@
 \usepackage{multirow}
 \usepackage{multicol}
 \usepackage{float}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{algorithm}
 
 \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
@@ -435,23 +438,52 @@ where:
     \item \(\nu\) represents the learning rate, and
     \item \(h_m(x)\) stands for the new tree.
 \end{itemize}
-
 \subsubsection{Application in Time-Series Forecasting}
-
-GBR is applied in time-series forecasting using the sliding window method, the time-series data is partitioned into overlapping windows of fixed length. Each window serves as an input feature set, with the subsequent value as the target variable. For a window size \(n\), the input feature set \(X_t\) at time \(t\) consists of the previous \(n\) observations:
-\begin{equation}
-    X_t = [x_{t-1}, x_{t-2}, \ldots, x_{t-n}],
-\end{equation}
-where \(X_t\) represents the input feature set at time \(t\).
-
-The GBR model is trained on these windowed feature sets, learning to correct errors from previous predictions. For forecasting, the trained GBR model uses the most recent window \(X_t\) to predict future values:
-\begin{equation}
-    \hat{y}_{t+h} = \hat{F}(X_t),
-\end{equation}
-where \(\hat{y}_{t+h}\) is the forecasted value \(h\) steps ahead, and \(\hat{F}\) is the trained GBR model.
-
-As new data arrives, the window slides forward, incorporating the new observation and dropping the oldest one, allowing the model to adapt and make accurate forecasts.
-
+\begin{algorithm}[H]
+    \caption{Gradient Boosting Regressor for Time-Series Forecasting}
+    \label{alg:gbr-time-series}
+    
+    \textbf{Input:} Time-series data \( \{y_1, y_2, \ldots, y_T\} \), Window size \( n \), Iterations \( M \), Learning rate \( \nu \)
+    
+    \textbf{Output:} Forecasted values \( \{\hat{y}_{T+1}, \hat{y}_{T+2}, \ldots, \hat{y}_{T+h}\} \) for \( h \) steps ahead
+    
+    \textbf{Initialization:} Initialize \( \hat{F}_0(x) \) using the initial model:
+    \[
+    \hat{F}_0(x) = \arg\min_{c} \sum_{i=1}^{n} L(y_i, c)
+    \]
+    Set \( \hat{F}(x) = \hat{F}_0(x) \)
+    
+    \textbf{Training and Forecasting:}
+    \begin{enumerate}
+        \item Initialize \( t = n+1 \)
+        \item \textbf{While} \( t \leq T+h \):
+        \begin{enumerate}
+            \item \textbf{Construct the feature vector:}
+            \[ 
+                X_t = [y_{t-1}, y_{t-2}, \ldots, y_{t-n}] 
+            \]
+            \item \textbf{Compute pseudo-residuals:}
+                \[
+                r_{it} = -\frac{\partial L(y_i, \hat{F}(X_i))}{\partial \hat{F}(X_i)} \bigg|_{\hat{F}(X_i) = \hat{F}(X_i)}
+                \]
+            \item \textbf{Train weak learner:}
+                \[
+                \begin{aligned}
+                \text{weak learner} &= \arg\min_{h} \sum_{i=1}^{t-1} \left[ r_{it} - h(X_i) \right]^2
+                \end{aligned}
+                \]
+            \item \textbf{Update the model:}
+                \[
+                \hat{F}(x) \leftarrow \hat{F}(x) + \nu \cdot \text{weak learner}(x)
+                \]
+            \item \textbf{Forecast:}
+                \[
+                \hat{y}_{t} = \hat{F}(X_t)
+                \]
+            \item \textbf{Slide window forward \( t \):} \( t = t + 1 \)
+        \end{enumerate}
+    \end{enumerate}
+\end{algorithm}
 
 \subsection{Decomposition Linear}
 Decomposition Linear or DLinear, is a model introduced for time series forecasting.  It first decomposes a raw data input into a trend component by a moving average kernel and a remainder (seasonal) component. Then, two
@@ -484,19 +516,34 @@ where:
 \end{itemize}
 
 \subsubsection{Trend Extraction}
-The trend component $\mathbf{T}(t)$ captures the long-term progression of the time series. It can be extracted using methods such as moving averages or polynomial fitting:
+The trend component $\mathbf{T}(t)$ captures the long-term progression of the time series. It can be extracted using methods such as moving averages or polynomial fitting.
+
+Moving Average:
 
 \begin{equation}
     \mathbf{T}(t) = \frac{1}{2k+1} \sum_{i=-k}^{k} \mathbf{x}(t+i),
 \end{equation}
 
-where $k$ is the window size for the moving average.
+where:
+\begin{itemize}
+    \item $\mathbf{T}(t)$ is the moving average at time t
+    \item $\frac{1}{2k+1}$ is the normalizing factor for the average calculation. It's the reciprocal of the window size, which is $2k+1$
+    \item x$(t+i)$ is the value of the time series at time $t+i$
+    \item $k$ is the window size.
+\end{itemize}
+
 
 \subsubsection{Seasonal Component}
 The seasonal component $\mathbf{S}(t)$ captures the repeating patterns within the time series. It can be obtained by removing the trend from the original series:
 \begin{equation}
     \mathbf{S}(t) = \mathbf{x}(t) - \mathbf{T}(t).
 \end{equation}
+where:
+\begin{itemize}
+    \item $\mathbf{S}(t)$ is the seasonal component at time $t$,
+    \item $\mathbf{x}(t)$ is the value of time series at time $t$,
+    \item $\mathbf{T}(t)$ is the trend component at time $t$.
+\end{itemize}
 
 \subsubsection{Linear Modeling}
 Separate linear models are used to predict the trend and seasonal components:
@@ -518,7 +565,7 @@ The final forecast \( \hat{\mathbf{x}}(t+h) \) is obtained by combining the pred
 \end{equation}
 DLinear offers an efficient and effective approach to time series forecasting by leveraging decomposition and linear transformations. This model addresses the limitations of traditional Transformers, making it suitable for long-term forecasting tasks.
 \section{RESULT}
-In this section, we will evaluate eight different models in forecasting: Linear Regression, ARIMA, SARIMAX, LSTM, GRU, DLinear, RNN, and Gradient Boosting Regressor. Initially, we will preprocess the original time series dataset. Following preprocessing, we will divide the data into train and test sets using three different ratios: 70:30, 80:20 and 90:10. Each model will be trained on the training set and subsequently used to make predictions on the test set. The performance of these models will be assessed using the following evaluation metrics: Mean Squared Error (MSE), Mean Absolute Error (MAE), and Root Mean Squared Error (RMSE). The results are presented in the tables below.
+In this section, we will evaluate eight different models in forecasting: Linear Regression, ARIMA, SARIMAX, LSTM, GRU, DLinear, RNN, and Gradient Boosting Regressor. The data will be divided into train and test sets using three different ratios: 70:30, 80:20 and 90:10. The performance of these models will be assessed by following evaluation metrics: Mean Squared Error (MSE), Mean Absolute Error (MAE), and Root Mean Squared Error (RMSE). The results are presented in the tables below.
 \subsection{CMG}
 \begin{table}[H]
     \renewcommand{\arraystretch}{1.5}
@@ -526,7 +573,7 @@ In this section, we will evaluate eight different models in forecasting: Linear 
     \begin{tabular}{|c|c|p{1cm}|p{1cm}|p{1cm}|}
         \hline
         \textbf{Model} & \textbf{Train/Test} & \textbf{RMSE} & \textbf{MAE} & \textbf{MAPE} \\
-        \hline
+        \specialrule{.2em}{.1em}{.1em}
         % Linear Regression
         \multirow{3}{*}{LR}
                        & 7 - 3               & 4776.167      & 3242.941     & 8.655\%       \\
@@ -534,7 +581,7 @@ In this section, we will evaluate eight different models in forecasting: Linear 
                        & 8 - 2               & 5613.133      & 2972.978     & 6.365\%       \\
         \cline{2-5}
                        & 9 - 1               & 7630.459      & 4249.712     & 8.081\%       \\
-        \hline
+        \specialrule{.2em}{.1em}{.1em}
         % ARIMA
         \multirow{3}{*}{ARIMA}
                        & 7 - 3               & 5590.559      & 3396.414     & 8.036\%       \\
@@ -542,7 +589,7 @@ In this section, we will evaluate eight different models in forecasting: Linear 
                        & 8 - 2               & 7949.917      & 5917.192     & 13.443\%      \\
         \cline{2-5}
                        & 9 - 1               & 8392.384      & 5363.964     & 10.641\%      \\
-        \hline
+        \specialrule{.2em}{.1em}{.1em}
         % SARIMAX
         \multirow{3}{*}{SARIMAX}
                        & 7 - 3               & 4790.479      & 3368.235     & 8.027\%       \\
@@ -550,7 +597,7 @@ In this section, we will evaluate eight different models in forecasting: Linear 
                        & 8 - 2               & 1606.532      & 1266.783     & 2.998\%       \\
         \cline{2-5}
                        & 9 - 1               & 1880.078      & 1333.986     & 2.803\%       \\
-        \hline
+        \specialrule{.2em}{.1em}{.1em}
         % RNN
         \multirow{3}{*}{RNN}
                        & 7 - 3               & 1310.051      & 803.027      & 2.022\%       \\
@@ -558,7 +605,7 @@ In this section, we will evaluate eight different models in forecasting: Linear 
                        & 8 - 2               & 1434.569      & 973.583      & 2.283\%       \\
         \cline{2-5}
                        & 9 - 1               & 1899.021      & 1241.602     & 2.615\%       \\
-        \hline
+        \specialrule{.2em}{.1em}{.1em}
         % GRU
         \multirow{3}{*}{GRU}
                        & 7 - 3               & 1256.333      & 800.386      & 2.037\%       \\
@@ -566,7 +613,7 @@ In this section, we will evaluate eight different models in forecasting: Linear 
                        & 8 - 2               & 1636.782      & 1039.329     & 2.393\%       \\
         \cline{2-5}
                        & 9 - 1               & 1901.258      & 1256.691     & 2.654\%       \\
-        \hline
+        \specialrule{.2em}{.1em}{.1em}
         % LSTM
         \multirow{3}{*}{LSTM}
                        & 7 - 3               & 1455.690      & 834.627      & 2.051\%       \\
@@ -574,7 +621,7 @@ In this section, we will evaluate eight different models in forecasting: Linear 
                        & 8 - 2               & 1687.759      & 1013.020     & 2.287\%       \\
         \cline{2-5}
                        & 9 - 1               & 1975.455      & 1264.345     & 2.642\%       \\
-        \hline
+        \specialrule{.2em}{.1em}{.1em}
         % GBR
         \multirow{3}{*}{GBR}
                        & 7 - 3               & 4805.334      & 1856.740     & 3.867\%       \\
@@ -582,15 +629,15 @@ In this section, we will evaluate eight different models in forecasting: Linear 
                        & 8 - 2               & 5885.479      & 2586.670     & 5.133\%       \\
         \cline{2-5}
                        & 9 - 1               & 8742.394      & 5095.510     & 9.776\%       \\
-        \hline
+        \specialrule{.2em}{.1em}{.1em}
         % DLinear
         \multirow{3}{*}{DLinear}
-                       & 7 - 3               & 941.648       & 610.784      & 1.590\%       \\
+                       & \textbf{7 - 3}               & \textbf{941.648}       & \textbf{610.784}      & \textbf{1.590\%}       \\
         \cline{2-5}
-                       & 8 - 2               & 995.657       & 620.887      & 1.442\%       \\
+                       & \textbf{8 - 2 }              & \textbf{995.657}       & \textbf{620.887}      & \textbf{1.442\%}       \\
         \cline{2-5}
-                       & 9 - 1               & 1294.638      & 911.389      & 1.972\%       \\
-        \hline
+                       & \textbf{9 - 1}               & \textbf{1294.638}      & \textbf{911.389 }     & \textbf{1.972\% }      \\
+        \specialrule{.2em}{.1em}{.1em}
     \end{tabular}
     \caption{Performance Metrics on CMG's test set}
     \label{tab:performance_metrics_cmg}
@@ -602,7 +649,7 @@ In this section, we will evaluate eight different models in forecasting: Linear 
     \begin{tabular}{|c|c|p{1.2cm}|p{1.2cm}|p{1cm}|}
         \hline
         \textbf{Model} & \textbf{Train/Test} & \textbf{RMSE} & \textbf{MAE} & \textbf{MAPE} \\
-        \hline
+        \specialrule{.2em}{.1em}{.1em}
         % Linear Regression
         \multirow{3}{*}{LR}
                        & 7 - 3               & 13208.213     & 11051.009    & 13.721\%      \\
@@ -610,7 +657,7 @@ In this section, we will evaluate eight different models in forecasting: Linear 
                        & 8 - 2               & 15941.794     & 12193.876    & 11.668\%      \\
         \cline{2-5}
                        & 9 - 1               & 20588.570     & 16918.134    & 14.564\%      \\
-        \hline
+        \specialrule{.2em}{.1em}{.1em}
         % ARIMA
         \multirow{3}{*}{ARIMA}
                        & 7 - 3               & 19697.622     & 13787.839    & 13.429\%      \\
@@ -618,7 +665,7 @@ In this section, we will evaluate eight different models in forecasting: Linear 
                        & 8 - 2               & 25634.306     & 21517.835    & 20.593\%      \\
         \cline{2-5}
                        & 9 - 1               & 16524.874     & 11914.706    & 9.908\%       \\
-        \hline
+        \specialrule{.2em}{.1em}{.1em}
         % SARIMAX
         \multirow{3}{*}{SARIMAX}
                        & 7 - 3               & 13980.543     & 10637.005    & 10.691\%      \\
@@ -626,7 +673,7 @@ In this section, we will evaluate eight different models in forecasting: Linear 
                        & 8 - 2               & 2689.828      & 2194.418     & 2.135\%       \\
         \cline{2-5}
                        & 9 - 1               & 11337.132     & 8609.467     & 7.251\%       \\
-        \hline
+        \specialrule{.2em}{.1em}{.1em}
         % RNN
         \multirow{3}{*}{RNN}
                        & 7 - 3               & 2279.840      & 1514.533     & 1.633\%       \\
@@ -634,7 +681,7 @@ In this section, we will evaluate eight different models in forecasting: Linear 
                        & 8 - 2               & 2917.896      & 1973.960     & 1.890\%       \\
         \cline{2-5}
                        & 9 - 1               & 3103.424      & 2241.372     & 1.969\%       \\
-        \hline
+        \specialrule{.2em}{.1em}{.1em}
         % GRU
         \multirow{3}{*}{GRU}
                        & 7 - 3               & 2130.231      & 1433.697     & 1.563\%       \\
@@ -642,7 +689,7 @@ In this section, we will evaluate eight different models in forecasting: Linear 
                        & 8 - 2               & 2809.575      & 2001.863     & 1.955\%       \\
         \cline{2-5}
                        & 9 - 1               & 2672.474      & 1886.464     & 1.658\%       \\
-        \hline
+        \specialrule{.2em}{.1em}{.1em}
         % LSTM
         \multirow{3}{*}{LSTM}
                        & 7 - 3               & 3157.352      & 2151.767     & 2.231\%       \\
@@ -650,7 +697,7 @@ In this section, we will evaluate eight different models in forecasting: Linear 
                        & 8 - 2               & 3512.565      & 2483.480     & 2.357\%       \\
         \cline{2-5}
                        & 9 - 1               & 2681.850      & 1870.596     & 1.642\%       \\
-        \hline
+        \specialrule{.2em}{.1em}{.1em}
         % GBR
         \multirow{3}{*}{GBR}
                        & 7 - 3               & 22226.841     & 14757.446    & 13.947\%      \\
@@ -658,15 +705,15 @@ In this section, we will evaluate eight different models in forecasting: Linear 
                        & 8 - 2               & 27359.470     & 22065.749    & 20.665\%      \\
         \cline{2-5}
                        & 9 - 1               & 18090.845     & 13052.712    & 10.774\%      \\
-        \hline
+        \specialrule{.2em}{.1em}{.1em}
         % DLinear
         \multirow{3}{*}{DLinear}
-                       & 7 - 3               & 1521.300      & 1050.039     & 1.185\%       \\
+                       & \textbf{7 - 3}               & \textbf{1521.300}      & \textbf{1050.039}     & \textbf{1.185\%}       \\
         \cline{2-5}
-                       & 8 - 2               & 1563.924      & 1083.996     & 1.094\%       \\
+                       & \textbf{8 - 2}               & \textbf{1563.924}      & \textbf{1083.996}     & \textbf{1.094\%}       \\
         \cline{2-5}
-                       & 9 - 1               & 1826.883      & 1288.223     & 1.161\%       \\
-        \hline
+                       & \textbf{9 - 1}               & \textbf{1826.883}      & \textbf{1288.223}     & \textbf{1.161\%}       \\
+        \specialrule{.2em}{.1em}{.1em}
     \end{tabular}
     \caption{Performance Metrics on FPT's test set}
     \label{tab:performance_metrics_fpt}
@@ -678,7 +725,7 @@ In this section, we will evaluate eight different models in forecasting: Linear 
     \begin{tabular}{|c|c|p{1cm}|p{1cm}|p{1cm}|}
         \hline
         \textbf{Model} & \textbf{Train/Test} & \textbf{RMSE} & \textbf{MAE} & \textbf{MAPE} \\
-        \hline
+        \specialrule{.2em}{.1em}{.1em}
         % Linear Regression
         \multirow{3}{*}{LR}
                        & 7 - 3               & 5049.939      & 4772.159     & 45.394\%      \\
@@ -686,7 +733,7 @@ In this section, we will evaluate eight different models in forecasting: Linear 
                        & 8 - 2               & 4119.015      & 3919.348     & 38.153\%      \\
         \cline{2-5}
                        & 9 - 1               & 3584.478      & 3542.331     & 35.514\%      \\
-        \hline
+        \specialrule{.2em}{.1em}{.1em}
         % ARIMA
         \multirow{3}{*}{ARIMA}
                        & 7 - 3               & 1205.208      & 1073.681     & 9.719\%       \\
@@ -694,15 +741,15 @@ In this section, we will evaluate eight different models in forecasting: Linear 
                        & 8 - 2               & 2181.237      & 1900.551     & 18.846\%      \\
         \cline{2-5}
                        & 9 - 1               & 595.809       & 380.715      & 3.592\%       \\
-        \hline
+        \specialrule{.2em}{.1em}{.1em}
         % SARIMAX
         \multirow{3}{*}{SARIMAX}
-                       & 7 - 3               & 187.480       & 153.968      & 1.417\%       \\
+                       & \textbf{7 - 3}               & \textbf{187.480}       & \textbf{153.968}      & \textbf{1.417\%}       \\
         \cline{2-5}
-                       & 8 - 2               & 148.763       & 115.969      & 1.094\%       \\
+                       & \textbf{8 - 2}               & \textbf{148.763}       & \textbf{115.969}      & \textbf{1.094\%}       \\
         \cline{2-5}
-                       & 9 - 1               & 150.452       & 121.827      & 1.201\%       \\
-        \hline
+                       & \textbf{9 - 1}               & \textbf{150.452}       & \textbf{121.827}      & \textbf{1.201\%}       \\
+        \specialrule{.2em}{.1em}{.1em}
         % RNN
         \multirow{3}{*}{RNN}
                        & 7 - 3               & 321.746       & 223.305      & 2.045\%       \\
@@ -710,7 +757,7 @@ In this section, we will evaluate eight different models in forecasting: Linear 
                        & 8 - 2               & 272.520       & 191.926      & 1.823\%       \\
         \cline{2-5}
                        & 9 - 1               & 285.653       & 210.604      & 2.037\%       \\
-        \hline
+        \specialrule{.2em}{.1em}{.1em}
         % GRU
         \multirow{3}{*}{GRU}
                        & 7 - 3               & 308.320       & 212.661      & 1.948\%       \\
@@ -718,7 +765,7 @@ In this section, we will evaluate eight different models in forecasting: Linear 
                        & 8 - 2               & 287.198       & 216.931      & 2.064\%       \\
         \cline{2-5}
                        & 9 - 1               & 287.089       & 187.537      & 1.791\%       \\
-        \hline
+        \specialrule{.2em}{.1em}{.1em}
         % LSTM
         \multirow{3}{*}{LSTM}
                        & 7 - 3               & 313.356       & 215.751      & 1.972\%       \\
@@ -726,7 +773,7 @@ In this section, we will evaluate eight different models in forecasting: Linear 
                        & 8 - 2               & 269.044       & 190.121      & 1.803\%       \\
         \cline{2-5}
                        & 9 - 1               & 278.773       & 186.645      & 1.786\%       \\
-        \hline
+        \specialrule{.2em}{.1em}{.1em}
         % GBR
         \multirow{3}{*}{GBR}
                        & 7 - 3               & 287.311       & 224.065      & 2.053\%       \\
@@ -734,7 +781,7 @@ In this section, we will evaluate eight different models in forecasting: Linear 
                        & 8 - 2               & 239.767       & 182.027      & 1.735\%       \\
         \cline{2-5}
                        & 9 - 1               & 267.945       & 209.760      & 2.055\%       \\
-        \hline
+        \specialrule{.2em}{.1em}{.1em}
         % DLinear
         \multirow{3}{*}{DLinear}
                        & 7 - 3               & 253.810       & 185.018      & 1.700\%       \\
@@ -742,7 +789,7 @@ In this section, we will evaluate eight different models in forecasting: Linear 
                        & 8 - 2               & 250.853       & 198.298      & 1.875\%       \\
         \cline{2-5}
                        & 9 - 1               & 286.739       & 227.045      & 2.211\%       \\
-        \hline
+        \specialrule{.2em}{.1em}{.1em}
     \end{tabular}
     \caption{Performance Metrics on ITD's test set}
     \label{tab:performance_metrics_itd}
