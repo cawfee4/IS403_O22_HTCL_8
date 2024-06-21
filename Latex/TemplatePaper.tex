@@ -319,8 +319,9 @@ where:
 \end{itemize}
 \subsection{Gradient Boosting Regressor}
 
-Gradient Boosting Regressor (GBR) is a powerful ensemble learning technique that constructs predictive models in a stage-wise fashion by combining multiple weak learners, typically decision trees, to enhance predictive accuracy. In time-series forecasting, GBR proves effective when employed with the sliding window method to capture temporal dependencies and patterns.
+Gradient Boosting Regressor (GBR) is a powerful ensemble learning technique that constructs predictive models in a stage-wise fashion by combining multiple weak learners, typically decision trees, to enhance predictive accuracy. GBR is particularly effective for time-series forecasting due to its ability to capture temporal dependencies and trends in the data.
 
+The whole process of building a GBR model includes:
 \subsubsection{Initial Model}
 
 GBR commences with an initial constant model:
@@ -361,23 +362,21 @@ where:
     \item \(h_m(x)\) stands for the new tree.
 \end{itemize}
 
-\subsubsection{Application in Time-Series Forecasting with Sliding Window}
+\subsubsection{Application in Time-Series Forecasting}
 
-To apply Gradient Boosting Regressor (GBR) to time-series forecasting using the sliding window method, we begin by partitioning the time-series data into overlapping windows of a fixed length. Each window serves as an input feature set, with the subsequent value serving as the target variable. For example, for a window size \(n\), the input feature set \(X_t\) at time \(t\) consists of the previous \(n\) observations:
+GBR is applied in time-series forecasting using the sliding window method, the time-series data is partitioned into overlapping windows of fixed length. Each window serves as an input feature set, with the subsequent value as the target variable. For a window size \(n\), the input feature set \(X_t\) at time \(t\) consists of the previous \(n\) observations:
 \begin{equation}
     X_t = [x_{t-1}, x_{t-2}, \ldots, x_{t-n}],
 \end{equation}
 where \(X_t\) represents the input feature set at time \(t\).
 
-The GBR model is then trained on these windowed feature sets. During training, the model iteratively corrects errors from previous predictions, effectively capturing the temporal dependencies present in the data.
-
-For forecasting, the trained GBR model utilizes the most recent window \(X_t\) to predict future values. Specifically, it predicts \(\hat{y}_{t+h}\), where \(t+h\) indicates the forecasted value \(h\) steps ahead from the current time \(t\), using the formula:
+The GBR model is trained on these windowed feature sets, learning to correct errors from previous predictions. For forecasting, the trained GBR model uses the most recent window \(X_t\) to predict future values:
 \begin{equation}
     \hat{y}_{t+h} = \hat{F}(X_t),
 \end{equation}
-where \(\hat{F}\) represents the trained GBR model.
+where \(\hat{y}_{t+h}\) is the forecasted value \(h\) steps ahead, and \(\hat{F}\) is the trained GBR model.
 
-As new data becomes available, the window slides forward, incorporating the new observation and dropping the oldest one. This iterative process allows the model to adapt to changing patterns in the time-series data and make accurate forecasts.
+As new data arrives, the window slides forward, incorporating the new observation and dropping the oldest one, allowing the model to adapt and make accurate forecasts.
 
 
 \subsection{Decomposition Linear}
