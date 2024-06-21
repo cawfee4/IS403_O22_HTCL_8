@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1718977257.58979 "d:/VSCode/IS403_O22_HTCL_8/Latex/TemplatePaper.tex" "TemplatePaper.pdf" "TemplatePaper" 1718977260.42599 0
+["pdflatex"] 1718983592.44519 "d:/VSCode/IS403_O22_HTCL_8/Latex/TemplatePaper.tex" "TemplatePaper.pdf" "TemplatePaper" 1718983597.22778 0
   "C:/Users/datdao2003/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1718975216 82507 a9eef8696c92627b87e9975edea03b2a ""
   "C:/Users/datdao2003/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1716867386 24242714 42ff9b5ec1dc945bbddf178c9a05fc1b ""
   "C:/Users/datdao2003/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc" 1458473887 4993 80dc9bab7f31fb78a000ccfed0e27cab ""
@@ -74,6 +74,7 @@
   "C:/Users/datdao2003/AppData/Local/Programs/MiKTeX/tex/generic/xkeyval/xkeyval.tex" 1656236919 19231 27205ee17aaa2902aea3e0c07a3cfc65 ""
   "C:/Users/datdao2003/AppData/Local/Programs/MiKTeX/tex/generic/xkeyval/xkvutils.tex" 1656236919 7677 9cb1a74d945bc9331f2181c0a59ff34a ""
   "C:/Users/datdao2003/AppData/Local/Programs/MiKTeX/tex/latex/00miktex/epstopdf-sys.cfg" 1616067285 584 2a1075dd71571459f59146da9f7502ad ""
+  "C:/Users/datdao2003/AppData/Local/Programs/MiKTeX/tex/latex/algorithms/algorithm.sty" 1251549064 3349 15763257e50278eef5db1952ccde229c ""
   "C:/Users/datdao2003/AppData/Local/Programs/MiKTeX/tex/latex/algorithms/algorithmic.sty" 1251549064 9550 793e9d5a71e74e730d97f6bf5d7e2bca ""
   "C:/Users/datdao2003/AppData/Local/Programs/MiKTeX/tex/latex/amsfonts/amsfonts.sty" 1358197772 5949 3f3fd50a8cc94c3d4cbf4fc66cd3df1c ""
   "C:/Users/datdao2003/AppData/Local/Programs/MiKTeX/tex/latex/amsfonts/amssymb.sty" 1358197772 13829 94730e64147574077f8ecfea9bb69af4 ""
@@ -110,8 +111,8 @@
   "C:/Users/datdao2003/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1700127522 55487 80a65caedd3722f4c20a14a69e785d8f ""
   "C:/Users/datdao2003/AppData/Local/Programs/MiKTeX/tex/latex/xkeyval/xkeyval.sty" 1656236919 4937 4ce600ce9bd4ec84d0250eb6892fcf4f ""
   "IEEEtran.cls" 1718853730 288304 5b2e4fa15b0f7eabb840ebf67df4c0f7 ""
-  "TemplatePaper.aux" 1718977260 7758 ee36fc4bec235e9a1a045b0b765883e7 "pdflatex"
-  "TemplatePaper.tex" 1718977115 48297 e24df9c4c7421faad51c4f01a3bdf5e0 ""
+  "TemplatePaper.aux" 1718983596 7964 7cedc75310530c0463e71e1f396a6af4 "pdflatex"
+  "TemplatePaper.tex" 1718983586 49109 77dcc625de2ff337a6e2d86047522864 ""
   "bibliography/Figure/ARIMA_FPT_73.png" 1718857939 53522 9859733a0bf327fb5635f5d5f32cf3a6 ""
   "bibliography/Figure/CMG_Boxplot.png" 1718853730 19640 af5bfd285400c60a5c051b6e6c3133ce ""
   "bibliography/Figure/CMG_histogram.png" 1718853730 19843 326759315eb77a57ecbfa8d988b167f3 ""
@@ -132,7 +133,7 @@
   "bibliography/Figure/SARIMAX_ITD_73.png" 1718857989 60135 1520142cb217cc05f1d6f07ce7f5766c ""
   "bibliography/Figure/What-is-Recurrent-Neural-Network.jpg" 1718853730 20700 9f26710c2e971f5e302163bf50f0c88e ""
   "bibliography/Logo_HTTT.png" 1718853730 201761 a75644caf3356abb594a9638af377093 ""
-  "d:/VSCode/IS403_O22_HTCL_8/Latex/TemplatePaper.tex" 1718977115 48297 e24df9c4c7421faad51c4f01a3bdf5e0 ""
+  "d:/VSCode/IS403_O22_HTCL_8/Latex/TemplatePaper.tex" 1718983586 49109 77dcc625de2ff337a6e2d86047522864 ""
   "ieeeojies.cls" 1718853730 44948 b3f6f333a7370cfc79757c7102125425 ""
   (generated)
   "TemplatePaper.aux"

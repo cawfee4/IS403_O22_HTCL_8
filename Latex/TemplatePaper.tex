@@ -10,6 +10,8 @@
 \usepackage{multicol}
 \usepackage{float}
 \usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{algorithm}
 
 \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
@@ -362,23 +364,52 @@ where:
     \item \(\nu\) represents the learning rate, and
     \item \(h_m(x)\) stands for the new tree.
 \end{itemize}
-
 \subsubsection{Application in Time-Series Forecasting}
-
-GBR is applied in time-series forecasting using the sliding window method, the time-series data is partitioned into overlapping windows of fixed length. Each window serves as an input feature set, with the subsequent value as the target variable. For a window size \(n\), the input feature set \(X_t\) at time \(t\) consists of the previous \(n\) observations:
-\begin{equation}
-    X_t = [x_{t-1}, x_{t-2}, \ldots, x_{t-n}],
-\end{equation}
-where \(X_t\) represents the input feature set at time \(t\).
-
-The GBR model is trained on these windowed feature sets, learning to correct errors from previous predictions. For forecasting, the trained GBR model uses the most recent window \(X_t\) to predict future values:
-\begin{equation}
-    \hat{y}_{t+h} = \hat{F}(X_t),
-\end{equation}
-where \(\hat{y}_{t+h}\) is the forecasted value \(h\) steps ahead, and \(\hat{F}\) is the trained GBR model.
-
-As new data arrives, the window slides forward, incorporating the new observation and dropping the oldest one, allowing the model to adapt and make accurate forecasts.
-
+\begin{algorithm}[H]
+    \caption{Gradient Boosting Regressor for Time-Series Forecasting}
+    \label{alg:gbr-time-series}
+    
+    \textbf{Input:} Time-series data \( \{y_1, y_2, \ldots, y_T\} \), Window size \( n \), Iterations \( M \), Learning rate \( \nu \)
+    
+    \textbf{Output:} Forecasted values \( \{\hat{y}_{T+1}, \hat{y}_{T+2}, \ldots, \hat{y}_{T+h}\} \) for \( h \) steps ahead
+    
+    \textbf{Initialization:} Initialize \( \hat{F}_0(x) \) using the initial model:
+    \[
+    \hat{F}_0(x) = \arg\min_{c} \sum_{i=1}^{n} L(y_i, c)
+    \]
+    Set \( \hat{F}(x) = \hat{F}_0(x) \)
+    
+    \textbf{Training and Forecasting:}
+    \begin{enumerate}
+        \item Initialize \( t = n+1 \)
+        \item \textbf{While} \( t \leq T+h \):
+        \begin{enumerate}
+            \item \textbf{Construct the feature vector:}
+            \[ 
+                X_t = [y_{t-1}, y_{t-2}, \ldots, y_{t-n}] 
+            \]
+            \item \textbf{Compute pseudo-residuals:}
+                \[
+                r_{it} = -\frac{\partial L(y_i, \hat{F}(X_i))}{\partial \hat{F}(X_i)} \bigg|_{\hat{F}(X_i) = \hat{F}(X_i)}
+                \]
+            \item \textbf{Train weak learner:}
+                \[
+                \begin{aligned}
+                \text{weak learner} &= \arg\min_{h} \sum_{i=1}^{t-1} \left[ r_{it} - h(X_i) \right]^2
+                \end{aligned}
+                \]
+            \item \textbf{Update the model:}
+                \[
+                \hat{F}(x) \leftarrow \hat{F}(x) + \nu \cdot \text{weak learner}(x)
+                \]
+            \item \textbf{Forecast:}
+                \[
+                \hat{y}_{t} = \hat{F}(X_t)
+                \]
+            \item \textbf{Slide window forward \( t \):} \( t = t + 1 \)
+        \end{enumerate}
+    \end{enumerate}
+\end{algorithm}
 
 \subsection{Decomposition Linear}
 Decomposition Linear or DLinear, is a model introduced for time series forecasting.  It first decomposes a raw data input into a trend component by a moving average kernel and a remainder (seasonal) component. Then, two
