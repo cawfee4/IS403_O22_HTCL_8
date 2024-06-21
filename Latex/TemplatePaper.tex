@@ -153,8 +153,7 @@ The basic model for multiple linear regression is:
 \begin{equation}
     Y = \beta_0 + \beta_1X_1 + \beta_2X_2 + ... + \beta_mX_m + \mathcal{E}
 \end{equation}
-
-Where:
+where:
 \begin{itemize}
     \item $Y$ is dependent variable;
     \item $X_1$, … $X_m$ is the distinct independent or predictor variables;
@@ -162,8 +161,6 @@ Where:
     \item $\beta_1$, ... $\beta_m$ is the regression coefficient of the independent variable;
     \item $\mathcal{E}$ is model error.
 \end{itemize}
-
-
 \subsection{ARIMA}
 ARIMA is the abbreviation for “Autoregressive integrated moving average”. The ARIMA model is popularly used to forecast univariate time series data. ARIMA model can handle a time series if it is stationary and has no data missing \cite{b6}. This method is used in multiple studies for forecasting.
 
@@ -174,7 +171,7 @@ ARIMA models are expressed in the form of ARIMA (p,d,q) \cite{b7}. All p, d, and
           \begin{equation}
               Y = \mu + \varphi_1Y_{t-1} + \varphi_2Y_{t-2} + ... + \varphi_pY_{t-p} + \varepsilon_t
           \end{equation}
-          which:
+          where:
           \begin{itemize}
               \item $Y$ is the current value;
               \item $\mu$ is the constant term;
@@ -185,12 +182,12 @@ ARIMA models are expressed in the form of ARIMA (p,d,q) \cite{b7}. All p, d, and
           \begin{equation}
               Y = \mu + \theta_1Y_{t-1} + \theta_2Y_{t-2} + ... + \theta_pY_{t-p} + \varepsilon_t
           \end{equation}
-          which:
+          where:
           \begin{itemize}
-            \item $Y_t$ is the current value;
-            \item $\mu$ is the constant term;
-            \item $p$ is the number of orders;
-            \item $\theta$ is the moving average coefficient and $\varepsilon_t$ is the error
+              \item $Y_t$ is the current value;
+              \item $\mu$ is the constant term;
+              \item $p$ is the number of orders;
+              \item $\theta$ is the moving average coefficient and $\varepsilon_t$ is the error
           \end{itemize}
     \item Last, the I part is Integrated, and d is the number of differences (order) required to make it a stationary sequence.
 \end{enumerate}
@@ -238,6 +235,20 @@ Recurrent Neural Networks is a type of neural network that can be used to model 
     \label{fig:rnn-overview}
 \end{figure}
 
+The formula for updating the hidden layer of RNN is as follows:
+\begin{equation}
+    h_t = tanh(W_{h}.h_{t - 1} + W_x.x_t + b)
+\end{equation}
+where:
+\begin{itemize}
+    \item $h_t$ is the hidden layer at time $t$,
+    \item $W_h$ is the weight matrix for the hidden layer,
+    \item $h_{t-1}$ is the hidden layer at the previous time step,
+    \item $W_x$ is the weight matrix for the input layer,
+    \item $x_t$ is the input data at time $t$,
+    \item $b$ is the bias vector.
+\end{itemize}
+
 The value $h$ of the hidden layer of RNN not only depends on the current input $x$, but also depends on the value $h$ of the last hidden layer, as shown in figure 8:
 \begin{figure} [H]
     \centering
@@ -256,66 +267,129 @@ Long short term memory (LSTM) \cite{b12} is a deformation structure of RNN by ad
     \label{fig:LSTM structure}
 \end{figure}
 
-In Figure 9, $\sigma$ is the sigmoid function shown in equation (13), whose output is a value between 0 and 1. Here, 0 means ‘‘let nothing pass’’ while 1 means "let everything pass". Then the hyperbolic tangent function illustrated in Equation (14), is used to overcome the problem of gradient disappearance.
-\begin{equation}
-    f_t = \sigma(W_f.[h_{t-1}, X_t] + b_f)
-\end{equation}
-\begin{equation}
-    i_t = \sigma(W_i.[h_{t-1}, X_t] + b_i)
-\end{equation}
-\begin{equation}
-    \hat{C}_t = tanh(W_c.[h_{t-1}, X_t] + b_c)
-\end{equation}
-\begin{equation}
-    C_t = f_t*C_{t-1} + i_t + \hat{C}_t
-\end{equation}
-\begin{equation}
-    O_t = \sigma(W_o.[h_{t-1}, X_t] + b_o)
-\end{equation}
+In Figure 9, $\sigma$ is the sigmoid function shown in equation (9), whose output is a value between 0 and 1. Here, 0 means ‘‘let nothing pass’’ while 1 means "let everything pass".
 \begin{equation}
     sigmoid(x) = \frac{1}{1+e^{-x}}
 \end{equation}
+
+The forget gate decides to forget irrelevant patterns from previous stock prices, the formula is shown in equation (10).
+\begin{equation}
+    f_t = \sigma(W_f.[h_{t-1}, X_t] + b_f)
+\end{equation}
+\begin{itemize}
+    \item $f_t$ is the forget gate at the current time step,
+    \item $W_f$ is the weight matrix for the forget gate,
+    \item $b_f$ is the bias vector for the forget gate,
+    \item $h_{t-1}$ is the hidden state of the previous time step,
+    \item $X_t$ is the input data at the current time step.
+\end{itemize}
+
+Next, the input gate decides which new stock price information to store in the cell state, the formula:
+\begin{equation}
+    i_t = \sigma(W_i.[h_{t-1}, X_t] + b_i)
+\end{equation}
+where:
+\begin{itemize}
+    \item $i_t$ is the input gate at the current time step,
+    \item $W_i$ is the weight matrix for the input gate,
+    \item $b_i$ is the bias vector for the input gate,
+    \item $h_{t-1}$ is the hidden state of the previous time step.
+\end{itemize}
+
+The candidate activation is calculated using the hyperbolic tangent function, as shown in equation below:
+\begin{equation}
+    \hat{C}_t = tanh(W_c.[h_{t-1}, X_t] + b_c)
+\end{equation}
+where:
+\begin{itemize}
+    \item $\hat{C}_t$ is the candidate activation at the current time step,
+    \item $W_c$ is the weight matrix for the candidate activation,
+    \item $b_c$ is the bias vector for the candidate activation,
+    \item $h_{t-1}$ is the hidden state of the previous time step.
+\end{itemize}
+
+The cell state is updated by combining the forget gate, input gate, and candidate activation, as shown in equation (13).
+\begin{equation}
+    C_t = f_t*C_{t-1} + i_t + \hat{C}_t
+\end{equation}
+where:
+\begin{itemize}
+    \item $C_t$ is the cell state at the current time step,
+    \item $f_t$ is the forget gate at the current time step,
+    \item $C_{t-1}$ is the cell state of the previous time step,
+    \item $i_t$ is the input gate at the current time step.
+\end{itemize}
+
+Then the hyperbolic tangent function illustrated in Equation (14), is used to overcome the problem of gradient disappearance.
 \begin{equation}
     tanh(x) = \frac{e^x - e^{-x}}{e^x + e^{-x}}
 \end{equation}
 
+Finally, the output gate determines which information to output from the cell state, as shown in equation below:
+\begin{equation}
+    O_t = \sigma(W_o.[h_{t-1}, X_t] + b_o)
+\end{equation}
 where:
 \begin{itemize}
-    \item $W_f, W_i, W_c$ and $W_o$ are input weights
-    \item $b_f, b_i, b_c$ and $b_o$ are bias weights
-    \item $t$ represents the current time state
-    \item $t - 1$ is the previous time state
-    \item $X$ represents input
-    \item $H$ represents output
-    \item $C$ is the cell status
+    \item $O_t$ is the output gate at the current time step,
+    \item $W_o$ is the weight matrix for the output gate,
+    \item $b_o$ is the bias vector for the output gate,
+    \item $h_{t-1}$ is the hidden state of the previous time step.
 \end{itemize}
+
 \subsection{Gate Recurrent Unit}
 GRU is one of the most popular improved variants of RNN with a special gated recurrent neural network based on optimized LSTM. The GRU internal structure is similar to the internal structure of the LSTM, except that the GRU associates the input gate and the forget gate in the LSTM unit into a single update gate. This model has two gates: one is the update gate, which controls the extent and retains previous information in the current state; the other represents the reset gate which determines whether the previous information and the current state are to be associated \cite{b14}. Figure 10 shows the basic design of a GRU unit.
 \begin{figure} [H]
     \centering
     \includegraphics[width=0.5\textwidth]{bibliography/Figure/GRU.png}
-    \caption{The structure of GRU units}
+    \caption{GRU Architectures}
     \label{fig:GRU structure}
 \end{figure}
-According to Figure 10, the formulas of GRU can be given as:
-\begin{equation}
-    z_t = \sigma(w_z[h_{t - 1}, X_t] + b_z)
-\end{equation}
+In the first step, the reset gate is calculated using both the hidden state from the previous time step and the input data from the current time step. This is achieved by applying a sigmoid function, as shown in equation (16).
 \begin{equation}
     r_t = \sigma(w_r[h_{t - 1}, X_t] + b_r)
 \end{equation}
+where:
+\begin{itemize}
+    \item $X_t$ is the vector input of training data at time $t$,
+    \item $r_t$ represent the reset gates respectively,
+    \item $w_r$ is the weight matrix for the reset gate,
+    \item $t$ is the candidate activation,
+    \item $b_r$ is the bias vector for the reset gate,
+\end{itemize}
+
+Next, decided the information which will be kept from the
+previous time steps together with the new inputs. This equation
+expressed in equation (17) below:
 \begin{equation}
     a_t = tanh(r_t * w_a[h_{t - 1}, X_t] + b_a)
 \end{equation}
+where:
+\begin{itemize}
+    \item $a_t$ is the candidate activation,
+    \item $w_a$ is the weight matrix for the candidate activation,
+    \item $b_a$ is the bias vector for the candidate activation,
+\end{itemize}
+
+Second, the update gate is computed using the previous hidden state and the current input data, similar to the reset gate. However, the weights applied to the input and hidden state for each gate are unique and independent. This results in the final vectors for the update gate being different from those of the reset gate, as shown in equation below:
+\begin{equation}
+    z_t = \sigma(w_z[h_{t - 1}, X_t] + b_z)
+\end{equation}
+where:
+\begin{itemize}
+    \item $z_t$ represent the update gates respectively,
+    \item $w_z$ is the weight matrix for the update gate,
+    \item $b_z$ is the bias vector for the update gate,
+\end{itemize}
+
+Next, summed with the output, which is from the update gate multiplied by the candidate hidden state, as expressed in equation below:
 \begin{equation}
     h_t = (1 - z_t) * a_t + z_t * h_{t - 1}
 \end{equation}
 where:
 \begin{itemize}
-    \item $X_t$ is the vector input of training data at time $t$.
-    \item $h_t$ is the outcome of the current layer at time $t$.
-    \item $z_t$ and $r_t$ represent the update and the reset gates respectively.
-    \item $t$ is the candidate activation.
+    \item $X_t$ is the vector input of training data at time $t$,
+    \item $h_t$ is the outcome of the current layer at time $t$
 \end{itemize}
 \subsection{Gradient Boosting Regressor}
 
